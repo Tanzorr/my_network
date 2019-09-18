@@ -1,0 +1,7 @@
+.nav{
+    grid-area: n;
+    background: blue;
+}
+.nav div a{
+    color: #fff;
+}
