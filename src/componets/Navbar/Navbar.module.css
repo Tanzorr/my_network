@@ -4,4 +4,9 @@
 }
 .nav div a{
     color: #fff;
+    text-decoration: none;
+}
+
+.nav div a.active{
+    color: gold;
 }

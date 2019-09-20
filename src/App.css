@@ -15,5 +15,14 @@
   max-width: 300px;
 }
 
+.app-wrapper-content{
+  grid-area: c;
+  background: beige;
+}
+
+.content{
+
+}
+
 
 
