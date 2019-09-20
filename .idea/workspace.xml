@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef8556c4-75a0-43be-9aa4-9e95c5123f24" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/componets/Dialogs/Dialogs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componets/Dialogs/Dialogs.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componets/Dialogs/DialogItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componets/Dialogs/Message.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componets/Profile/Myposts/Post/Post.modyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componets/Profile/ProfileInfo/ProfileInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Navbar/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Navbar/Navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Navbar/Navbar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Dialogs/Dialogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Dialogs/Dialogs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Myposts/MyPosts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Myposts/MyPosts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Myposts/Myposts.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Myposts/Myposts.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Myposts/Post/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Myposts/Post/Post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Myposts/Post/Post.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/ProfileInfo/ProfoleImfo.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componets/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Profile.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Profile.module.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -47,21 +47,23 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../js.ru2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/componets/Profile/Myposts/Post/PrifileInfo" />
+      <recent name="$PROJECT_DIR$/src/componets/Dialogs" />
+      <recent name="$PROJECT_DIR$/src/componets/Profile/Myposts/Post" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/componets/Profile/Myposts" />
       <recent name="$PROJECT_DIR$/src/componets/Profile" />
       <recent name="$PROJECT_DIR$/src/componets/Navbar" />
       <recent name="$PROJECT_DIR$/src/componets/Header" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/componets/Dialogs" />
-      <recent name="$PROJECT_DIR$/src/componets/Profile/Myposts/Post" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -105,6 +107,8 @@
       <workItem from="1568881638215" duration="635000" />
       <workItem from="1568907048400" duration="299000" />
       <workItem from="1568966930441" duration="271000" />
+      <workItem from="1568972048818" duration="3320000" />
+      <workItem from="1568986499400" duration="1802000" />
     </task>
     <servers />
   </component>
