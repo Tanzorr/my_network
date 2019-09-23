@@ -11,22 +11,21 @@ class Dialogs extends Component {
             {id: 2, name: 'Alex'},
         ];
 
-
-        let messagesData =[
+        let messages =[
             {id: 1, message: 'Dimych'},
             {id: 2, message: 'Alex'},
-        ]
+        ];
+
+        let dialogElements = dialogs.map(d => <DialogItem mame={d.name} id={d.id} /> );
+        let messagesElements = messages.map(m => <Message message={m.message} />);
+
         return (
             <div className={s.dialogs}>
                 <div className={s.dialog_items}>
-                   <DialogItem name={dialogs[0].name} id= {dialogs[0].id}/>
-                   <DialogItem name={dialogs[1].name} id= {dialogs[1].id}/>
-
+                    { dialogElements}
                 </div>
                 <div className={s.messages}>
-                    <Message message = {messagesData[0].message}/>
-                    <Message message = {messagesData[1].message}/>
-
+                    {messagesElements}
                 </div>
             </div>
         );
