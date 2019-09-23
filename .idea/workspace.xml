@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef8556c4-75a0-43be-9aa4-9e95c5123f24" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/componets/Dialogs/DialogItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componets/Dialogs/Message.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componets/Profile/Myposts/Post/Post.modyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componets/Profile/ProfileInfo/ProfileInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Dialogs/Dialogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Dialogs/Dialogs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Myposts/MyPosts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Myposts/MyPosts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Myposts/Myposts.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Myposts/Myposts.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Myposts/Post/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Myposts/Post/Post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Myposts/Post/Post.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/ProfileInfo/ProfoleImfo.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Profile.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +98,7 @@
       <workItem from="1568907048400" duration="299000" />
       <workItem from="1568966930441" duration="271000" />
       <workItem from="1568972048818" duration="3320000" />
-      <workItem from="1568986499400" duration="1802000" />
+      <workItem from="1568986499400" duration="2681000" />
     </task>
     <servers />
   </component>
