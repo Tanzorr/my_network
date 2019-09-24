@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef8556c4-75a0-43be-9aa4-9e95c5123f24" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/componets/Dialogs/DialogItem/DialogsItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/state.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Dialogs/DialogItem.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componets/Dialogs/Dialogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Dialogs/Dialogs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Dialogs/Dialogs.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Dialogs/Dialogs.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Dialogs/Message.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Dialogs/Messages/Message.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componets/Profile/Myposts/MyPosts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Myposts/MyPosts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -47,11 +55,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/componets/Dialogs/Messages" />
+      <recent name="$PROJECT_DIR$/src/componets/Dialogs/DialogItem" />
       <recent name="$PROJECT_DIR$/src/componets/Profile/Myposts/Post/PrifileInfo" />
       <recent name="$PROJECT_DIR$/src/componets/Dialogs" />
       <recent name="$PROJECT_DIR$/src/componets/Profile/Myposts/Post" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/redux" />
       <recent name="$PROJECT_DIR$/src/componets/Profile/Myposts" />
       <recent name="$PROJECT_DIR$/src/componets/Profile" />
       <recent name="$PROJECT_DIR$/src/componets/Navbar" />
@@ -102,6 +113,10 @@
       <workItem from="1568972048818" duration="3320000" />
       <workItem from="1568986499400" duration="2681000" />
       <workItem from="1569249603049" duration="2446000" />
+      <workItem from="1569310940711" duration="18000" />
+      <workItem from="1569314829592" duration="2370000" />
+      <workItem from="1569322846632" duration="2094000" />
+      <workItem from="1569327899438" duration="7947000" />
     </task>
     <servers />
   </component>

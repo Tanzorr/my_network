@@ -4,12 +4,13 @@ import MyPosts from "./Myposts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 class Profile extends Component {
-    render() {
+    render(props) {
+        console.log('prop posst', this.props);
         return (
             <div>
                 <div>
                     <ProfileInfo/>
-                    <MyPosts/>
+                    <MyPosts posts={this.props.state.posts}/>
                 </div>
             </div>
         );

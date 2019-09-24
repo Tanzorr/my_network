@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import s from "./Dialogs.module.css";
+import s from "./../Dialogs.module.css";
 
 class Message extends Component {
     render(props) {

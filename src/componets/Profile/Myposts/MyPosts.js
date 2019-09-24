@@ -3,13 +3,9 @@ import s from './Myposts.module.css'
 import ProfileInfo from "./Post/Post";
 
 class MyPosts extends Component {
-    render() {
-        let posts =[
-            {id: 1, message: 'Dimych hi',likesCount:12},
-            {id: 2, message: 'Alex first post',likesCount: 34}
-        ];
-
-        let postElements= posts.map(p => <ProfileInfo message={p.message} likesCount={p.likesCount}/>)
+    render(props) {
+            console.log('props posts',this.props.posts);
+        let postElements= this.props.posts.map(p => <ProfileInfo message={p.message} likesCount={p.likesCount}/>)
 
         return (
             <div className={s.postBlock}>
