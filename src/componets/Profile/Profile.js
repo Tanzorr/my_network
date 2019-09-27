@@ -10,7 +10,7 @@ class Profile extends Component {
             <div>
                 <div>
                     <ProfileInfo/>
-                    <MyPosts posts={this.props.state.posts}/>
+                    <MyPosts posts={this.props.state.posts} currentval={this.props.state.newPostText} addPost={this.props.addPost} updateNextPostText={this.props.updateNextPostText}/>
                 </div>
             </div>
         );
