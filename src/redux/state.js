@@ -22,41 +22,52 @@ let store ={
         }
     },
 
-    getState(){
-        return this._state;
-    },
-
     _callSubscriber(){
         console.log('State changed');
-    },
-
-    addPost(){
-        let newPost = {
-            id:5,
-            message:this._state.profilePage.newPostText,
-            likesCount:0
-        }
-
-
-        this._state.profilePage.posts.push(newPost);
-        this._callSubscriber(this._state);
-        this._state.profilePage.newPostText ='';
-
-
-    },
-
-    updateNewPostText(newText){
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
     },
 
     subscribe(observer){
         this._callSubscriber = observer;
     },
 
+    getState(){
+        return this._state;
+    },
+    dispatch(action){
+        if (action.type ==='ADD-POST'){
+            let newPost = {
+                id:5,
+                message:this._state.profilePage.newPostText,
+                likesCount:0
+            }
+
+
+            this._state.profilePage.posts.push(newPost);
+            this._callSubscriber(this._state);
+            this._state.profilePage.newPostText ='';
+        }else if (action.type ==='UPDATE-NEW-POST-TEXT'){
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+        }
+    }
+
+
+
 }
 
-console.log('in add post',store._state.profilePage.posts);
+export const addPostActionCreator = ()=>{
+    return{
+        type:'ADD-POST'
+    }
+}
+
+export const updateNewPostActionCreator = (text)=>{
+    return{
+        type:'UPDATE-NEW-POST-TEXT',
+        newText:text
+    }
+}
+
 
 
 
