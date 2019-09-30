@@ -3,6 +3,8 @@ import s from './Myposts.module.css'
 import ProfileInfo from "./Post/Post";
 import {addPostActionCreator, updateNewPostActionCreator} from "../../../redux/state";
 
+
+
 class MyPosts extends Component {
     render(props) {
         console.log('props posts',this.props.dispatch);
@@ -11,14 +13,14 @@ class MyPosts extends Component {
         let newPostElement = React.createRef();
 
         let addPost =()=>{
-            let action = addPostActionCreator();
-            this.props.dispatch(a);
+           // let action = addPostActionCreator();
+            this.props.dispatch(addPostActionCreator());
         }
 
         let onPostChange = ()=>{
             let  text= newPostElement.current.value;
             let action = updateNewPostActionCreator(text);
-            this.props.dispatch(action);
+            this.props.dispatch(updateNewPostActionCreator(text));
         }
 
         return (
