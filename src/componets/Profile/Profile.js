@@ -5,7 +5,9 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 class Profile extends Component {
     render(props) {
-        console.log('prop posst', this.props);
+
+        console.log('profile page', this.props.store);
+
         return (
             <div>
                 <div>
