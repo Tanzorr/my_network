@@ -7,8 +7,8 @@ import {addPostActionCreator, updateNewPostActionCreator} from "../../../redux/p
 
 class MyPosts extends Component {
     render(props) {
-        console.log('props posts',this.props.dispatch);
-        let postElements= this.props.posts.map(p => <ProfileInfo message={p.message} likesCount={p.likesCount}/>);
+        console.log('props posts',props);
+        let postElements= this.props.store.getState().posts.map(p => <ProfileInfo message={p.message} likesCount={p.likesCount}/>);
 
         let newPostElement = React.createRef();
 

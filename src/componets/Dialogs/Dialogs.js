@@ -3,14 +3,12 @@ import s from "./Dialogs.module.css";
 import {NavLink} from "react-router-dom";
 import DialogItem from "./DialogItem/DialogsItem";
 import Message from "./Messages/Message";
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/dialogs-reducer";
+import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/store";
 
 class Dialogs extends Component {
     render(props) {
 
-      //  console.log(this.props.store.getState().dialogsReducer().dialogs,'dialogs props');
-
-        let data = this.props.store.getState().dialogsReducer;
+        let data = this.props.store.getState().dialogsPage;
 
 
 
