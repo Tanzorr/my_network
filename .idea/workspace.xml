@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef8556c4-75a0-43be-9aa4-9e95c5123f24" name="Default Changelist" comment="" />
+    <list default="true" id="ef8556c4-75a0-43be-9aa4-9e95c5123f24" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Dialogs/Dialogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Dialogs/Dialogs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Dialogs/Messages/Message.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Dialogs/Messages/Message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Myposts/MyPosts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Myposts/MyPosts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/state.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +63,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../js.ru2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -128,6 +136,10 @@
       <workItem from="1569689466139" duration="1697000" />
       <workItem from="1569765231031" duration="1780000" />
       <workItem from="1569767042860" duration="1716000" />
+      <workItem from="1570025663486" duration="2949000" />
+      <workItem from="1570028922824" duration="1733000" />
+      <workItem from="1570089949428" duration="95000" />
+      <workItem from="1570095228583" duration="884000" />
     </task>
     <servers />
   </component>

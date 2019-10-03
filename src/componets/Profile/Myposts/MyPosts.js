@@ -12,7 +12,7 @@ class MyPosts extends Component {
 
         let addPost =()=>{
             let action = addPostActionCreator();
-            this.props.dispatch(a);
+            this.props.dispatch(action);
         }
 
         let onPostChange = ()=>{

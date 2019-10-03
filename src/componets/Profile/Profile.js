@@ -9,7 +9,7 @@ class Profile extends Component {
         return (
             <div>
                 <div>
-                    <ProfileInfo/>
+                    <ProfileInfo />
                     <MyPosts posts={this.props.state.posts} currentval={this.props.state.newPostText} dispatch={this.props.dispatch} updateNextPostText={this.props.updateNextPostText}/>
                 </div>
             </div>
