@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import s from './Profile.module.css'
 import MyPosts from "./Myposts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import MyPostsContainer from "./Myposts/MyPostsContainer";
 
 class Profile extends Component {
     render(props) {
@@ -10,7 +11,7 @@ class Profile extends Component {
             <div>
                 <div>
                     <ProfileInfo />
-                    <MyPosts posts={this.props.state.posts} currentval={this.props.state.newPostText} dispatch={this.props.dispatch} updateNextPostText={this.props.updateNextPostText}/>
+                    <MyPostsContainer store={this.props.store}/>
                 </div>
             </div>
         );

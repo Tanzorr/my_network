@@ -7,25 +7,19 @@ import {addMessageActionCreator, updateNewMessageActionCreator} from "../../redu
 
 class Dialogs extends Component {
     render(props) {
-
-        console.log('dialigs state',  this.props.store.getState().dialogsPage);
-
-        let state = this.props.store.getState().dialogsPage;
-
+        let state = this.props.dialogsPage;
         let dialogElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id} /> );
         let messagesElements = state.messages.map(m => <Message message={m.message} />);
         let newMessageText = state.newMessageText;
 
         let addMessage = ()=>{
-            let action = addMessageActionCreator();
-            this.props.store.dispatch(action);
+           this.props.addMessage();
         }
 
 
         let onMessageChange = (e)=>{
             let text = e.target.value;
-            let action = updateNewMessageActionCreator(text);
-            this.props.store.dispatch(action);
+            this.props.updateNewMessageBody(text);
 
         }
 

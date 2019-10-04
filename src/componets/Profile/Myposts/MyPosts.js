@@ -10,15 +10,14 @@ class MyPosts extends Component {
 
         let newPostElement = React.createRef();
 
-        let addPost =()=>{
-            let action = addPostActionCreator();
-            this.props.dispatch(action);
+        let onAddPost =()=> {
+            this.props.addPost()
         }
+
 
         let onPostChange = ()=>{
             let  text= newPostElement.current.value;
-            let action = updateNewPostActionCreator(text);
-            this.props.dispatch(action);
+            this.props.updateNewPostText(text);
         }
 
         return (
@@ -26,10 +25,10 @@ class MyPosts extends Component {
                <h3>My posts</h3>
                 <div >
                     <div>
-                        <textarea name="" id="" cols="30" rows="10" onChange={onPostChange} ref={newPostElement} value={this.props.currentval}></textarea>
+                        <textarea name="" id="" cols="30" rows="10" onChange={onPostChange} ref={newPostElement} value={this.props.newPostText}></textarea>
                     </div>
                     <div>
-                        <button onClick={addPost}>Add post</button>
+                        <button onClick={onAddPost}>Add post</button>
                     </div>
 
                 </div>
