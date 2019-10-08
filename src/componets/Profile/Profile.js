@@ -6,12 +6,12 @@ import MyPostsContainer from "./Myposts/MyPostsContainer";
 
 class Profile extends Component {
     render(props) {
-        console.log('prop posst', this.props);
+
         return (
             <div>
                 <div>
-                    <ProfileInfo />
-                    <MyPostsContainer store={this.props.store}/>
+                    {/*<ProfileInfo />*/}
+                    <MyPostsContainer />
                 </div>
             </div>
         );

@@ -20,8 +20,7 @@ class MyPosts extends Component {
             this.props.updateNewPostText(text);
         }
 
-        return (
-            <div className={s.postBlock}>
+        return<div className={s.postBlock}>
                <h3>My posts</h3>
                 <div >
                     <div>
@@ -36,7 +35,7 @@ class MyPosts extends Component {
                     {postElements}
                 </div>
             </div>
-        );
+
     }
 }
 

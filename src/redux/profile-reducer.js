@@ -5,6 +5,8 @@ let initialState ={
 
         posts: [
             {id: 1, message: 'Dimych hi',likesCount:12},
+            {id: 1, message: 'Dimych hi',likesCount:12},
+            {id: 1, message: 'Dimych hi',likesCount:12},
             {id: 2, message: 'Alex first post',likesCount: 34}
         ],
         newPostText:'alex alex',
