@@ -9,32 +9,19 @@ import {BrowserRouter, Route} from "react-router-dom";
 import DialogsContainer from "./componets/Dialogs/DialogsContainer";
 
 function App(props) {
-    console.log('props', props);
-  return (
 
+  return (
       <BrowserRouter>
           <div className="app-wrapper">
               <Header/>
               <Navbar/>
               {/*<Profile/>*/}
               <div className='app-wrapper-content'>
-                  <Route path='/dialogs' component={Dialogs}/>
+                  <Route path='/dialogs' component={DialogsContainer}/>
                   <Route path='/profile' component={Profile}/>
-
-                  <Route path='/dialogs' render = {()=><DialogsContainer />}/>
-                  <Route path='/profile' render = {()=><Profile  />}/>
-
               </div>
           </div>
       </BrowserRouter>
-
-
-
-
-
-
-
-
   );
 }
 

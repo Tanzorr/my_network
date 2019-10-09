@@ -4,13 +4,11 @@ import Dialogs from "./Dialogs";
 
 import {connect} from "react-redux";
 
-
-
 let mapStateToProps = (state)=>{
     return{
         dialogsPage: state.dialogsPage
     }
-}
+};
 
 let mapDispatchToProps = (dispatch)=>{
     return{
@@ -23,8 +21,8 @@ let mapDispatchToProps = (dispatch)=>{
             dispatch(action);
         }
     }
-}
+};
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs)
+const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
 
 export default DialogsContainer;

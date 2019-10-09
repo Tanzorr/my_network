@@ -5,26 +5,27 @@ import {addPostActionCreator, updateNewPostActionCreator} from "../../../redux/p
 
 class MyPosts extends Component {
     render(props) {
-        console.log('props posts',this.props.dispatch);
-        let postElements= this.props.posts.map(p => <ProfileInfo message={p.message} likesCount={p.likesCount}/>);
+
+        let postElements= this.props.posts.map(p => <ProfileInfo key={p.id} message={p.message} likesCount={p.likesCount}/>);
 
         let newPostElement = React.createRef();
 
         let onAddPost =()=> {
             this.props.addPost()
-        }
+        };
 
 
-        let onPostChange = ()=>{
-            let  text= newPostElement.current.value;
-            this.props.updateNewPostText(text);
-        }
-
-        return<div className={s.postBlock}>
+        let onPostChange = (e)=>{
+            let text = e.target.value;
+            this.props.newPostTextFunc(text);
+        };
+        console.log(this.props);
+        return (
+            <div className={s.postBlock}>
                <h3>My posts</h3>
                 <div >
                     <div>
-                        <textarea name="" id="" cols="30" rows="10" onChange={onPostChange} ref={newPostElement} value={this.props.newPostText}></textarea>
+                        <textarea name="" id="" cols="30" rows="10" onChange={onPostChange} ref={newPostElement} value={this.props.newPostText}/>
                     </div>
                     <div>
                         <button onClick={onAddPost}>Add post</button>
@@ -35,7 +36,7 @@ class MyPosts extends Component {
                     {postElements}
                 </div>
             </div>
-
+        )
     }
 }
 

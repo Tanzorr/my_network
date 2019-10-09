@@ -10,7 +10,7 @@ class Dialogs extends Component {
 
         let state = this.props;
 
-       console.log('state',state);
+
         let dialogElements;
         let messagesElements;
         let newMessageText;
@@ -40,9 +40,7 @@ class Dialogs extends Component {
                     {messagesElements}
                     <div>
                         <div>
-                            <textarea placeholder='Enter your message ' name="" id="message" onChange={onMessageChange}
-
-                                       value={newMessageText}/>
+                            <textarea placeholder='Enter your message ' name="" id="message" onChange={onMessageChange} value={newMessageText}/>
                         </div>
                         <div>
                             <button onClick={addMessage}>add</button>

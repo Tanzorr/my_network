@@ -5,29 +5,36 @@ let initialState ={
 
         posts: [
             {id: 1, message: 'Dimych hi',likesCount:12},
-            {id: 1, message: 'Dimych hi',likesCount:12},
-            {id: 1, message: 'Dimych hi',likesCount:12},
             {id: 2, message: 'Alex first post',likesCount: 34}
         ],
-        newPostText:'alex alex',
+        newPostText:'',
 };
 
 const profileReducer =(state=initialState , action)=> {
+
     switch (action.type){
-        case ADD_POST:
+        case ADD_POST:{
             let newPost = {
                 id: 5,
                 message: state.newPostText,
                 likesCount: 0
+            };
+            let copyState = {...state};
+            copyState.posts = [...state.posts];
+            copyState.posts.push(newPost);
+            copyState.newPostText = "";
+            return copyState;
+        }
+           case UPDATE_NEW_POST_TEXT:{
+               let copyState = {...state};
+               console.log(action.newText);
+                copyState.newPostText = action.newText;
+                return copyState;
             }
-            state.posts.push(newPost);
-            state.newPostText = "";
+        default:
             return state;
-        case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
-        default :
-            return state;
+
+
 
     }
 }
