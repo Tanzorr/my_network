@@ -7,7 +7,8 @@ import Profile from "./componets/Profile/Profile";
 import Dialogs from "./componets/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
 import DialogsContainer from "./componets/Dialogs/DialogsContainer";
-import Usesrs from "./componets/Users/Usesrs";
+import UsersContainer from "./componets/Users/UsersContainer";
+
 
 function App(props) {
 
@@ -19,7 +20,7 @@ function App(props) {
               <div className='app-wrapper-content'>
                   <Route path='/dialogs' component={DialogsContainer}/>
                   <Route path='/profile' component={Profile}/>
-                  <Route path='/users' component={Usesrs}/>
+                  <Route path='/users' component={UsersContainer}/>
               </div>
           </div>
       </BrowserRouter>
