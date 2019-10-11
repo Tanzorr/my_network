@@ -1,45 +1,28 @@
 import React, {Component} from 'react';
 import styles from './users.module.css';
+import * as axios from  'axios'
+import userPhoto from '../../assets/images/download.png'
 
 class Users extends Component {
 
-    render() {
-        if(this.props.users.length ===0) {
-            this.props.setUsers([
-                {
-                    id: 1,
-                    photoURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDez20A1BbPOlzQtk07gkO1Nh0ikJ24QhaQxAIlnYExQUukpPD',
-                    followed: false,
-                    fullName: 'Alexx',
-                    status: 'admin',
-                    lokation: {city: 'Kyev', country: 'Ukrain'}
-                },
-                {
-                    id: 2,
-                    photoURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDez20A1BbPOlzQtk07gkO1Nh0ikJ24QhaQxAIlnYExQUukpPD',
-                    followed: true,
-                    fullName: 'Viktor',
-                    status: 'admin',
-                    lokation: {city: 'Kyev', country: 'Ukrain'}
-                },
-                {
-                    id: 3,
-                    photoURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDez20A1BbPOlzQtk07gkO1Nh0ikJ24QhaQxAIlnYExQUukpPD',
-                    followed: false,
-                    fullName: 'Uriy',
-                    status: 'admin',
-                    lokation: {city: 'Kyev', country: 'Ukrain'}
-                },
+        render() {
+            let getUsers = ()=>{if(this.props.users.length ===0) {
+                axios.get("https://social-network.samuraijs.com/api/1.0/users")
+                    .then(response=>{
+                        this.props.setUsers(response.data.items);
+                    });
 
-            ]);
-        }
+            }
+        };
+
         return (
             <div>
+                <button onClick={getUsers}>Get User</button>
                 {
                     this.props.users.map(u=><div key={u.id}>
                         <span>
                             <div>
-                                <img src={u.photoURL} className={styles.usersPhoto} alt=""/>
+                                <img src={u.photos.small != null ? u.photos.small:userPhoto} className={styles.usersPhoto} alt=""/>
                             </div>
                             <div>
                                 { u.followed ? <button onClick={()=>{this.props.unfollow(u.id)}}>Follow</button> : <button  onClick={()=>{this.props.follow(u.id)}}>UnFollow</button>}
@@ -47,10 +30,10 @@ class Users extends Component {
                             </div>
                         </span>
                         <span>
-                            <div>{u.fullName}</div>
+                            <div>{u.name}</div>
                             <div>{u.status}</div>
-                            <div>{u.lokation.country}</div>
-                            <div>{u.lokation.city}</div>
+                            <div>{"u.lokation.country"}</div>
+                            <div>{"u.lokation.city"}</div>
                         </span>
                     </div> )
                 } 
