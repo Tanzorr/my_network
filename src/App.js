@@ -1,9 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from "./componets/Header/Header";
 import Navbar from "./componets/Navbar/Navbar";
-import Profile from "./componets/Profile/Profile";
+import ProfileContainer from "./componets/Profile/ProfileContainer";
 import Dialogs from "./componets/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
 import DialogsContainer from "./componets/Dialogs/DialogsContainer";
@@ -19,7 +18,7 @@ function App(props) {
               <Navbar/>
               <div className='app-wrapper-content'>
                   <Route path='/dialogs' component={DialogsContainer}/>
-                  <Route path='/profile' component={Profile}/>
+                  <Route path='/profile' component={ProfileContainer}/>
                   <Route path='/users' component={UsersContainer}/>
               </div>
           </div>

@@ -1,22 +1,28 @@
 import React, {Component} from 'react';
 import s from './ProfoleImfo.module.css'
+import Preloader from "../../comon/prloader/Preloader";
 
 
-class ProfileInfo extends Component {
-    render(props) {
-
-       //console.log("props",this.props.message);
-        return (
+const ProfileInfo=(props)=>{
+    if (!props.profile){
+        return <Preloader/>
+    }
+    return (
             <div className={s.item} >
+
                 <div>
-                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt=""/>
+                    <img src="" alt=""/>
                 </div>
                 <div className={s.description}>
-                    {this.props.message}
+                    <img src={props.profile.photos.large} alt=""/>
+                    <p>
+                        {props.profile.fullName}
+                    </p>
+
                 </div>
             </div>
         );
-    }
+
 }
 
 export default ProfileInfo;

@@ -1,19 +1,17 @@
-import React, {Component, Fragment} from 'react';
-import s from './Profile.module.css'
-import MyPosts from "./Myposts/MyPosts";
+import React from 'react';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import MyPostsContainer from "./Myposts/MyPostsContainer";
+import MyPostContainer from "./Myposts/MyPostsContainer";
+import Preloader from "../comon/prloader/Preloader";
 
-class Profile extends Component {
-    render(props) {
-        console.log(MyPostsContainer);
-        return (
-            <Fragment>
-                {/*<ProfileInfo />*/}
-                <MyPostsContainer />
-            </Fragment>
+
+const Profile =(props)=>{
+
+    return(
+            <div>
+                <ProfileInfo profile={props.profile}/>
+                <MyPostContainer/>
+            </div>
         );
-    }
-}
+};
 
 export default Profile;
