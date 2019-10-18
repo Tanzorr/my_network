@@ -18,7 +18,7 @@ function App(props) {
               <Navbar/>
               <div className='app-wrapper-content'>
                   <Route path='/dialogs' component={DialogsContainer}/>
-                  <Route path='/profile' component={ProfileContainer}/>
+                  <Route path='/profile/:userId?' component={ProfileContainer}/>
                   <Route path='/users' component={UsersContainer}/>
               </div>
           </div>
