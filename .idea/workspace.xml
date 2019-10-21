@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef8556c4-75a0-43be-9aa4-9e95c5123f24" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/componets/Header/HeaderContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/auth-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Profile/ProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/ProfileContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Header/Header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,26 +63,26 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../js.ru2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/componets/Header" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/componets/Header" />
+      <recent name="$PROJECT_DIR$/src/componets/Dialogs" />
+      <recent name="$PROJECT_DIR$/src/componets/Profile/Myposts" />
+      <recent name="$PROJECT_DIR$/src/redux" />
+      <recent name="$PROJECT_DIR$/src/componets/Dialogs/Messages" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/redux" />
       <recent name="$PROJECT_DIR$/src/componets/Profile/Myposts" />
       <recent name="$PROJECT_DIR$/src/componets/Profile" />
       <recent name="$PROJECT_DIR$/src/componets/Navbar" />
       <recent name="$PROJECT_DIR$/src/componets/Header" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/componets/Dialogs" />
-      <recent name="$PROJECT_DIR$/src/componets/Profile/Myposts" />
-      <recent name="$PROJECT_DIR$/src/redux" />
-      <recent name="$PROJECT_DIR$/src/componets/Dialogs/Messages" />
-      <recent name="$PROJECT_DIR$/src/componets/Dialogs/DialogItem" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -155,7 +159,9 @@
       <workItem from="1571234158342" duration="4787000" />
       <workItem from="1571300399202" duration="502000" />
       <workItem from="1571304654521" duration="11468000" />
-      <workItem from="1571390666838" duration="8010000" />
+      <workItem from="1571390666838" duration="8722000" />
+      <workItem from="1571652993612" duration="10000" />
+      <workItem from="1571656368788" duration="4521000" />
     </task>
     <servers />
   </component>

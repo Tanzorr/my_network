@@ -7,6 +7,7 @@ import Dialogs from "./componets/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
 import DialogsContainer from "./componets/Dialogs/DialogsContainer";
 import UsersContainer from "./componets/Users/UsersContainer";
+import HeaderContainer from "./componets/Header/HeaderContainer";
 
 
 function App(props) {
@@ -14,7 +15,7 @@ function App(props) {
   return (
       <BrowserRouter>
           <div className="app-wrapper">
-              <Header/>
+              <HeaderContainer/>
               <Navbar/>
               <div className='app-wrapper-content'>
                   <Route path='/dialogs' component={DialogsContainer}/>
