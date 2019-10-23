@@ -31,7 +31,11 @@ let Users = (props) =>{
                                 </NavLink>
                             </div>
                             <div>
-                                { u.followed ? <button onClick={()=> { axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{
+                                { u.followed ? <button
+                                    disabled={props.followingInProgress.some(id=>id===u.id)}
+                                        onClick={()=> {
+                                    props.toggleFollowingProgress(true,u.id);
+                                    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{
                                         withCredentials:true,
                                         headers: {
                                             "API-KEY": "246fdf62-0bab-41d9-a587-285f4f1dc67e"
@@ -41,9 +45,13 @@ let Users = (props) =>{
                                             if (response.data.resultCode == 0){
                                                 props.unfollow(u.id)
                                             }
+                                            props.toggleFollowingProgress(false,u.id);
                                         });
                                 }} >UnFollow</button> :
-                                    <button  onClick={ ()=>{axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{},{
+                                    <button
+                                        disabled={props.followingInProgress.some(id=>id===u.id)} onClick={ ()=>{
+                                        props.toggleFollowingProgress(true,u.id);
+                                        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{},{
                                         withCredentials:true,
                                         headers: {
                                             "API-KEY": "246fdf62-0bab-41d9-a587-285f4f1dc67e"
@@ -52,6 +60,7 @@ let Users = (props) =>{
                                         .then(response => {
                                             if (response.data.resultCode == 0){
                                                 props.follow(u.id)
+                                                props.toggleFollowingProgress(false,u.id);
                                             }
 
                                         })
