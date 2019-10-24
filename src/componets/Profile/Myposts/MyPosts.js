@@ -1,35 +1,34 @@
 import React, {Component} from 'react';
 import s from './Myposts.module.css'
 import ProfileInfo from "./Post/Post";
-import {addPostActionCreator, updateNewPostActionCreator} from "../../../redux/state";
+import {addPostActionCreator, updateNewPostActionCreator} from "../../../redux/profile-reducer";
 
 class MyPosts extends Component {
     render(props) {
-        console.log('props posts',this.props.dispatch);
-        let postElements= this.props.posts.map(p => <ProfileInfo message={p.message} likesCount={p.likesCount}/>);
+
+        let postElements= this.props.posts.map(p => <ProfileInfo key={p.id} message={p.message} likesCount={p.likesCount}/>);
 
         let newPostElement = React.createRef();
 
-        let addPost =()=>{
-            let action = addPostActionCreator();
-            this.props.dispatch(a);
-        }
+        let onAddPost =()=> {
+            this.props.addPost()
+        };
 
-        let onPostChange = ()=>{
-            let  text= newPostElement.current.value;
-            let action = updateNewPostActionCreator(text);
-            this.props.dispatch(action);
-        }
 
+        let onPostChange = (e)=>{
+            let text = e.target.value;
+            this.props.newPostTextFunc(text);
+        };
+        console.log(this.props);
         return (
             <div className={s.postBlock}>
                <h3>My posts</h3>
                 <div >
                     <div>
-                        <textarea name="" id="" cols="30" rows="10" onChange={onPostChange} ref={newPostElement} value={this.props.currentval}></textarea>
+                        <textarea name="" id="" cols="30" rows="10" onChange={onPostChange} ref={newPostElement} value={this.props.newPostText}/>
                     </div>
                     <div>
-                        <button onClick={addPost}>Add post</button>
+                        <button onClick={onAddPost}>Add post</button>
                     </div>
 
                 </div>
@@ -37,7 +36,7 @@ class MyPosts extends Component {
                     {postElements}
                 </div>
             </div>
-        );
+        )
     }
 }
 
