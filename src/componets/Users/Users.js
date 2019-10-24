@@ -3,6 +3,7 @@ import styles from "./users.module.css";
 import userPhoto from "../../assets/images/download.png";
 import {NavLink} from "react-router-dom";
 import * as axios from "axios";
+import {usersAPI} from "../../api/api";
 
 let Users = (props) =>{
 
@@ -34,36 +35,11 @@ let Users = (props) =>{
                                 { u.followed ? <button
                                     disabled={props.followingInProgress.some(id=>id===u.id)}
                                         onClick={()=> {
-                                    props.toggleFollowingProgress(true,u.id);
-                                    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{
-                                        withCredentials:true,
-                                        headers: {
-                                            "API-KEY": "246fdf62-0bab-41d9-a587-285f4f1dc67e"
-                                        }
-                                    })
-                                        .then(response => {
-                                            if (response.data.resultCode == 0){
-                                                props.unfollow(u.id)
-                                            }
-                                            props.toggleFollowingProgress(false,u.id);
-                                        });
+                                            props.unfollow(u.id);
                                 }} >UnFollow</button> :
                                     <button
                                         disabled={props.followingInProgress.some(id=>id===u.id)} onClick={ ()=>{
-                                        props.toggleFollowingProgress(true,u.id);
-                                        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{},{
-                                        withCredentials:true,
-                                        headers: {
-                                            "API-KEY": "246fdf62-0bab-41d9-a587-285f4f1dc67e"
-                                        }
-                                    })
-                                        .then(response => {
-                                            if (response.data.resultCode == 0){
-                                                props.follow(u.id)
-                                                props.toggleFollowingProgress(false,u.id);
-                                            }
-
-                                        })
+                                        props.follow(u.id);
                                     }}
                                     >Follow</button>}
 
