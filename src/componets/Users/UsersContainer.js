@@ -8,7 +8,7 @@ import {
     toggleFollowingProgress,
     getUsers
 } from "../../redux/users-reducer";
-import {usersAPI}  from "../../api/api"
+
 import Users from "./Users";
 import Preloader from "../comon/prloader/Preloader";
 
