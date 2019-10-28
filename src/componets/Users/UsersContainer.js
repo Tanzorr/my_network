@@ -11,6 +11,7 @@ import {
 
 import Users from "./Users";
 import Preloader from "../comon/prloader/Preloader";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 
 
 class UsersAPIComponent extends Component {
@@ -59,7 +60,8 @@ let mapStateToProps = (state)=>{
 };
 
 
-export default connect(mapStateToProps, {
+
+export default  withAuthRedirect(connect(mapStateToProps, {
     followSuccess,
     unfollowSuccess,
     setCurrentPage,
@@ -67,4 +69,4 @@ export default connect(mapStateToProps, {
     toggleFollowingProgress,
     getUsers
 
-})(UsersAPIComponent)
+})(UsersAPIComponent));
