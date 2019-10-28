@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef8556c4-75a0-43be-9aa4-9e95c5123f24" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/componets/Login/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Users/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Users/Users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Users/UsersContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Users/UsersContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Dialogs/Dialogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Dialogs/Dialogs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Dialogs/DialogsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Dialogs/DialogsContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Profile/ProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/ProfileContainer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -175,7 +173,8 @@
       <workItem from="1571656368788" duration="5270000" />
       <workItem from="1571736914802" duration="5717000" />
       <workItem from="1571905845083" duration="296000" />
-      <workItem from="1571910026987" duration="5376000" />
+      <workItem from="1571910026987" duration="6232000" />
+      <workItem from="1571998063264" duration="10932000" />
     </task>
     <servers />
   </component>

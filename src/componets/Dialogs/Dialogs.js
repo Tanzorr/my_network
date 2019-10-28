@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import s from "./Dialogs.module.css";
-import {NavLink} from "react-router-dom";
+import { Redirect} from "react-router-dom";
 import DialogItem from "./DialogItem/DialogsItem";
 import Message from "./Messages/Message";
-import {addMessageActionCreator, updateNewMessageActionCreator} from "../../redux/dialogs-reducer";
+
 
 class Dialogs extends Component {
     render(props) {
@@ -23,14 +23,17 @@ class Dialogs extends Component {
 
         let addMessage = () => {
             this.props.addMessage();
-        }
+        };
 
 
         let onMessageChange = (e) => {
             let text = e.target.value;
             this.props.onMessageChange(text);
 
-        }
+        };
+
+        if(this.props.isAuth===false) return(<Redirect to={"/login"}/>);
+
 
         return<div className={s.dialogs}>
                 <div className={s.dialogItems}>
