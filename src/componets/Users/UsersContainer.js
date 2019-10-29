@@ -12,6 +12,7 @@ import {
 import Users from "./Users";
 import Preloader from "../comon/prloader/Preloader";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {compose} from "redux";
 
 
 class UsersAPIComponent extends Component {
@@ -59,14 +60,15 @@ let mapStateToProps = (state)=>{
     }
 };
 
+export  default  compose(
+    withAuthRedirect,
+    connect(mapStateToProps, {
+        followSuccess,
+        unfollowSuccess,
+        setCurrentPage,
+        toggleIsFetching,
+        toggleFollowingProgress,
+        getUsers,
 
-
-export default  withAuthRedirect(connect(mapStateToProps, {
-    followSuccess,
-    unfollowSuccess,
-    setCurrentPage,
-    toggleIsFetching,
-    toggleFollowingProgress,
-    getUsers
-
-})(UsersAPIComponent));
+    })
+)(UsersAPIComponent);

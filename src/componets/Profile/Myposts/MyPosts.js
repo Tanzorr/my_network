@@ -19,7 +19,7 @@ class MyPosts extends Component {
             let text = e.target.value;
             this.props.newPostTextFunc(text);
         };
-        console.log(this.props);
+
         return (
             <div className={s.postBlock}>
                <h3>My posts</h3>
