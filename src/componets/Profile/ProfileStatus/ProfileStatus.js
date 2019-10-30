@@ -29,13 +29,20 @@ class ProfileStatus extends React.Component{
    };
 
     onStatusChange = (e) =>{
-        this.state.status = " ";
         this.setState({
             status : e.currentTarget.value
         })
-
         this.props.updateStatus(this.state.status);
+        this.state.status = " ";
     };
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(prevProps.status !== this.props.status){
+            this.setState({
+                status: this.props.status
+            })
+        }
+    }
 
     render(props) {
         let val = this.state.status;
