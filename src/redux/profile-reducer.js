@@ -1,9 +1,10 @@
 import {toggleFollowingProgress} from "./users-reducer";
-import {usersAPI} from "../api/api";
+import {usersAPI,profileAPI} from "../api/api";
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
+const SET_STATUS = 'SET_STATUS';
 
 let initialState ={
 
@@ -12,7 +13,8 @@ let initialState ={
             {id: 2, message: 'Alex first post',likesCount: 34}
         ],
         newPostText:'',
-        profile:null
+        profile:null,
+        status: ""
 };
 
 const profileReducer =(state=initialState , action)=> {
@@ -34,6 +36,11 @@ const profileReducer =(state=initialState , action)=> {
                             newPostText: action.newText
                };
            }
+        case SET_STATUS:{
+            return {...state,
+                status: action.status
+            };
+        }
         case SET_USER_PROFILE:{
             return {...state, profile:action.profile};
         }
@@ -55,6 +62,8 @@ export const updateNewPostActionCreator = (text)=>{
     }
 };
 
+export const setStatus =(status)=>({type: SET_STATUS, status});
+
 export  const setUserProfile = (profile)=>{
 
     return {
@@ -62,6 +71,29 @@ export  const setUserProfile = (profile)=>{
         profile
     }
 };
+
+export  const getStatus = (userId)=>{
+    return (dispatch)=>{
+        profileAPI.getStatus(userId)
+            .then(
+            data=>{ dispatch (setStatus(data));}
+        )
+    }
+};
+
+export  const updateStatus = (status)=>{
+    console.log('status2',status);
+    return (dispatch)=>{
+        profileAPI.updateStatus(status).then(response=> {
+            if (response.data.resultCode === 0) {
+                dispatch(setStatus(status));
+            }
+
+    });
+}
+};
+
+
 
 export const getUser = (userId)=>{
     return (dispatch)=>{
