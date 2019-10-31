@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Navbar from "./componets/Navbar/Navbar";
 import ProfileContainer from "./ProfileContainer";
-import {BrowserRouter, Route, Redirect} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 import DialogsContainer from "./componets/Dialogs/DialogsContainer";
 import UsersContainer from "./componets/Users/UsersContainer";
 import HeaderContainer from "./componets/Header/HeaderContainer";
@@ -11,7 +11,7 @@ import LoginPage from "./componets/Login/login";
 
 
 function App(props) {
-
+    console.log("kore",props);
   return (
       <BrowserRouter>
           <div className="app-wrapper">

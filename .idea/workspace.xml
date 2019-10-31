@@ -3,11 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="ef8556c4-75a0-43be-9aa4-9e95c5123f24" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Login/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Profile/ProfileStatus/ProfileStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/ProfileStatus/ProfileStatus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Dialogs/Dialogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Dialogs/Dialogs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Dialogs/DialogsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Dialogs/DialogsContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Myposts/MyPosts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Myposts/MyPosts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Myposts/MyPostsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Myposts/MyPostsContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Myposts/Post/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Myposts/Post/Post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +65,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/componets/Header" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Docker/mylamp" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -177,7 +180,8 @@
       <workItem from="1571910026987" duration="6232000" />
       <workItem from="1571998063264" duration="10932000" />
       <workItem from="1572343131850" duration="16330000" />
-      <workItem from="1572429096848" duration="9198000" />
+      <workItem from="1572429096848" duration="9892000" />
+      <workItem from="1572517433328" duration="9146000" />
     </task>
     <servers />
   </component>

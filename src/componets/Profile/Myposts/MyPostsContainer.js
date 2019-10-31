@@ -6,19 +6,13 @@ import {connect} from "react-redux";
 let mapStateToProps = (state)=>{
     return{
      posts: state.profilePage.posts,
-        newPostText:state.profilePage.newPostText
     }
 };
 
 let mapDispatchToProps = (dispatch)=>{
     return{
-        newPostTextFunc: (text)=>{
-            let action = updateNewPostActionCreator(text);
-            dispatch(action);
-        },
-
-        addPost: ()=>{
-            let action = addPostActionCreator();
+        addPost: (newPostBody)=>{
+            let action = addPostActionCreator(newPostBody);
             dispatch(action);
         }
     }
