@@ -10,7 +10,7 @@ import {
 } from "../../redux/users-reducer";
 
 import Users from "./Users";
-import Preloader from "../comon/prloader/Preloader";
+import Preloader from "../comon/Prloader/Preloader";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 
