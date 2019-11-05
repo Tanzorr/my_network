@@ -7,11 +7,14 @@ import { withRouter } from "react-router";
 
 class ProfileContainer extends Component {
     componentDidMount() {
+        console.log('pp props',this.props);
         let userId = this.props.match.params.userId;
         if (!userId){
-            userId =2;
+            userId =this.props.authorizedUserId;
         }
-        console.log('pc',this.props.match.params.userId);
+
+
+
         axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`)
             .then(response=>{
                 console.log('SetP',response.data);
@@ -22,13 +25,21 @@ class ProfileContainer extends Component {
     render(props) {
         console.log('container props',this.props);
         return (
-            <Profile {...this.props} profile = {this.props.profile}/>
+            <Profile {...this.props}
+                     profile = {this.props.profile}
+                     status={this.props.status}
+                     updateStatus={this.props.updateStatus}
+            />
         );
     }
 }
 
 let mapStateToProps = (state) =>({
-    profile: state.profilePage.profile
+    profile: state.profilePage.profile,
+    status:state.profilePage.status,
+    authorizedUserId:state.auth.userId,
+    isAuth: state.auth.isAuth
+
 });
 
 

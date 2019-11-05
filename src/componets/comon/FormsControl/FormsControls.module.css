@@ -13,6 +13,10 @@
 .error span
 {
    color:  red;
+}
 
-
+.formControlSummeryError {
+    border: red 1px solid;
+    padding: 5px;
+    color: rosybrown;
 }
