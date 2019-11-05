@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef8556c4-75a0-43be-9aa4-9e95c5123f24" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/componets/Profile/ProfileContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Header/HeaderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Header/HeaderContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componets/Login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Login/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/auth-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-reducer.js" afterDir="false" />
     </list>
@@ -181,6 +179,7 @@
       <workItem from="1572517433328" duration="12002000" />
       <workItem from="1572602737643" duration="13000" />
       <workItem from="1572607654779" duration="13777000" />
+      <workItem from="1572947508728" duration="4690000" />
     </task>
     <servers />
   </component>
