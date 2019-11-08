@@ -1,17 +1,18 @@
-import React, {Component} from 'react';
+import React from 'react';
 import s from './Myposts.module.css'
 import ProfileInfo from "./Post/Post";
 import {Field, reduxForm} from "redux-form";
 import {maxLengthCriator, required} from "../../../utils/validators";
 import {Textarea} from "../../comon/FormsControl/FormsControls";
 
-class MyPosts extends Component {
-    render(props) {
-        console.log('pposts',this.props.posts);
-        let postElements= this.props.posts.map(p => <ProfileInfo key={p.id} post={p.post} likesCount={p.likesCount}/>);
+const MyPosts = React.memo(props => {
+       console.log('pposts',props.posts);
+       console.log('Render Yo');
+
+        let postElements= props.posts.map(p => <ProfileInfo key={p.id} post={p.post} likesCount={p.likesCount}/>);
 
         let addNewPost=(v)=>{
-            this.props.addPost(v.newPostBody);
+            props.addPost(v.newPostBody);
         }
 
         return (
@@ -23,8 +24,8 @@ class MyPosts extends Component {
                 </div>
             </div>
         )
-    }
-}
+
+});
 
 const maxLength10 = maxLengthCriator(10);
 
