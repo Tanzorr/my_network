@@ -8,9 +8,18 @@ import {
     toggleFollowingProgress,
     getUsers
 } from "../../redux/users-reducer";
-import {usersAPI}  from "../../api/api"
+
 import Users from "./Users";
-import Preloader from "../comon/prloader/Preloader";
+import Preloader from "../comon/Prloader/Preloader";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {compose} from "redux";
+import {
+    getCurrentPage,
+    getFollovingInProgress,
+    getIsFetching,
+    getPageSize,
+    getTotalUsersCount, getUserss, getUserssSuper
+} from "../../redux/users-selectors";
 
 
 class UsersAPIComponent extends Component {
@@ -46,25 +55,38 @@ class UsersAPIComponent extends Component {
 }
 
 
+// let mapStateToProps = (state)=>{
+//
+//     return{
+//         users: state.usersPage.users,
+//         pageSize: state.usersPage.pageSize,
+//         totalUsersCount: state.usersPage.totalUsersCount,
+//         currentPage: state.usersPage.currentPage,
+//         isFetching: state.usersPage.isFetching,
+//         followingInProgress:state.usersPage.followingInProgress
+//     }
+// };
+
 let mapStateToProps = (state)=>{
 
     return{
-        users: state.usersPage.users,
-        pageSize: state.usersPage.pageSize,
-        totalUsersCount: state.usersPage.totalUsersCount,
-        currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.isFetching,
-        followingInProgress:state.usersPage.followingInProgress
+        users: getUserss(state),
+        pageSize: getPageSize(state),
+        totalUsersCount: getTotalUsersCount(state),
+        currentPage: getCurrentPage(state),
+        isFetching: getIsFetching(state),
+        followingInProgress:getFollovingInProgress(state)
     }
 };
 
+export  default  compose(
+    connect(mapStateToProps, {
+        followSuccess,
+        unfollowSuccess,
+        setCurrentPage,
+        toggleIsFetching,
+        toggleFollowingProgress,
+        getUsers,
 
-export default connect(mapStateToProps, {
-    followSuccess,
-    unfollowSuccess,
-    setCurrentPage,
-    toggleIsFetching,
-    toggleFollowingProgress,
-    getUsers
-
-})(UsersAPIComponent)
+    })
+)(UsersAPIComponent);

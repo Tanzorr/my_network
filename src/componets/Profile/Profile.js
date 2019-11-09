@@ -1,14 +1,13 @@
 import React from 'react';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostContainer from "./Myposts/MyPostsContainer";
-import Preloader from "../comon/prloader/Preloader";
 
 
 const Profile =(props)=>{
 
     return(
             <div>
-                <ProfileInfo profile={props.profile}/>
+                <ProfileInfo profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
                 <MyPostContainer/>
             </div>
         );
