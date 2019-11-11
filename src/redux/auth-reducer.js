@@ -16,7 +16,6 @@ let initialState ={
 const authReducer =(state=initialState , action)=> {
     switch (action.type){
         case SET_USERS_DATA:
-            console.log('a',action.data);
             return {
                 ...state,
                 ...action.payload,
@@ -31,8 +30,8 @@ export const setAuthUserData = (userId,email, login, isAuth)=>({
     payload:{userId, email, login, isAuth}
 });
 
-export const getAuthUserData =() => async (dispatch)=>{
-    let response =await authAPI.me();
+export const getAuthUserData =() => async(dispatch)=>{
+    let response = await authAPI.me();
 
         if(response.data.resultCode === 0){
             let {id,email,login} = response.data.data;
@@ -42,8 +41,8 @@ export const getAuthUserData =() => async (dispatch)=>{
 };
 
 
-export const login =(email,password,rememberMe) =>(dispatch)=>{
-    authAPI.login(email,password,rememberMe).then(response=>{
+export const login =(email,password,rememberMe) =>async (dispatch)=>{
+   let response = await authAPI.login(email,password,rememberMe);
         console.log("responce data",response.data.messages);
         if(response.data.resultCode === 0){
          dispatch(getAuthUserData())
@@ -52,7 +51,6 @@ export const login =(email,password,rememberMe) =>(dispatch)=>{
             let message = response.data.messages.length > 0 ? response.data.messages[0] : "Some error";
             dispatch(stopSubmit("login",{_error: message}));
         }
-    });
 };
 
 

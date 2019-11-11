@@ -6,12 +6,13 @@ import DialogsContainer from "./componets/Dialogs/DialogsContainer";
 import UsersContainer from "./componets/Users/UsersContainer";
 import HeaderContainer from "./componets/Header/HeaderContainer";
 import LoginPage from "./componets/Login/login";
-import {connect, Provider} from "react-redux";
+import {connect} from "react-redux";
 import {compose} from "redux";
-import {BrowserRouter, Route} from "react-router-dom";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./componets/comon/Prloader/Preloader";
-import store from "./redux/redux-store";
+import {Route} from "react-router-dom";
+import { withRouter } from "react-router";
+
 
 
 
@@ -26,10 +27,7 @@ class App extends Component{
             return <Preloader/>
         }
     return (
-
-            <BrowserRouter>
-
-                <div className="app-wrapper">
+            <div className="app-wrapper">
                     <HeaderContainer/>
                     <Navbar/>
                     <div className='app-wrapper-content'>
@@ -38,11 +36,7 @@ class App extends Component{
                         <Route path='/users' component={UsersContainer}/>
                         <Route path='/login' component={LoginPage}/>
                     </div>
-                </div>
-
-            </BrowserRouter>
-
-    );
+                </div>);
 }
 
 }
@@ -52,8 +46,7 @@ const mapStateToProps = (state)=>({
 })
 
 export default compose(
+    withRouter,
     connect(mapStateToProps,{initializeApp}),
-
-
 )(App);
 

@@ -2,13 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef8556c4-75a0-43be-9aa4-9e95c5123f24" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/redux/profile-reducer.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componets/Users/User.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componets/comon/Paginator/Paginator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componets/comon/Paginator/Paginator.modyle..css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/object-helpers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Myposts/MyPosts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Myposts/MyPosts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Profile/ProfileStatus/ProfileStatusWithHook.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/ProfileStatus/ProfileStatusWithHook.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Profile/ProfileInfo/ProfileInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/ProfileInfo/ProfileInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Users/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Users/Users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Users/UsersContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Users/UsersContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/comon/FormsControl/FormsControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/comon/FormsControl/FormsControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/auth-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +47,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -63,7 +72,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/componets/Users" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -72,19 +81,19 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/redux" />
-      <recent name="$PROJECT_DIR$/src/componets/Profile/ProfileStatus" />
-      <recent name="$PROJECT_DIR$/src/componets/comon/FormsControl" />
-      <recent name="$PROJECT_DIR$/src/componets/Header" />
-      <recent name="$PROJECT_DIR$/src/componets/Dialogs" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/componets/comon/paginator" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/redux" />
       <recent name="$PROJECT_DIR$/src/componets/Profile/Myposts" />
       <recent name="$PROJECT_DIR$/src/componets/Profile" />
-      <recent name="$PROJECT_DIR$/src/componets/Navbar" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/componets/Users" />
+      <recent name="$PROJECT_DIR$/src/redux" />
+      <recent name="$PROJECT_DIR$/src/componets/Profile/ProfileStatus" />
+      <recent name="$PROJECT_DIR$/src/componets/comon/FormsControl" />
+      <recent name="$PROJECT_DIR$/src/componets/Header" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -254,6 +263,8 @@
       <workItem from="1573054810886" duration="51000" />
       <workItem from="1573137773262" duration="5169000" />
       <workItem from="1573208294963" duration="6983000" />
+      <workItem from="1573467599563" duration="57000" />
+      <workItem from="1573474358207" duration="9915000" />
     </task>
     <servers />
   </component>

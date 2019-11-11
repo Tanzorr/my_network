@@ -11,7 +11,6 @@ import {
 
 import Users from "./Users";
 import Preloader from "../comon/Prloader/Preloader";
-import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 import {
     getCurrentPage,
@@ -21,16 +20,15 @@ import {
     getTotalUsersCount, getUserss, getUserssSuper
 } from "../../redux/users-selectors";
 
-
 class UsersAPIComponent extends Component {
     componentDidMount() {
-        this.props.getUsers(this.props.currentPage, this.props.pageSize);
-    }
+        let {currentPage,pageSize} = this.props;
+        this.props.getUsers(currentPage, pageSize);}
 
-    onpageChanged =(pageNumber)=>{
-        this.props.getUsers(pageNumber, this.props.pageSize);
-
-    }
+        onpageChanged =(pageNumber)=>{
+        let pageSize = this.props.pageSize;
+        this.props.getUsers(pageNumber,pageSize);
+    };
 
     render() {
         return (
@@ -54,18 +52,6 @@ class UsersAPIComponent extends Component {
     }
 }
 
-
-// let mapStateToProps = (state)=>{
-//
-//     return{
-//         users: state.usersPage.users,
-//         pageSize: state.usersPage.pageSize,
-//         totalUsersCount: state.usersPage.totalUsersCount,
-//         currentPage: state.usersPage.currentPage,
-//         isFetching: state.usersPage.isFetching,
-//         followingInProgress:state.usersPage.followingInProgress
-//     }
-// };
 
 let mapStateToProps = (state)=>{
 
