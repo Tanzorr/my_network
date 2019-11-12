@@ -21,6 +21,7 @@ let reducers = combineReducers({
 
 });
 
+//let composeEnhancers = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let store = createStore(reducers,composeWithDevTools(applyMiddleware(thunkMiddleware)));
 
 window.store = store;
