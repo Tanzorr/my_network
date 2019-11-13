@@ -4,10 +4,10 @@ import MyPostContainer from "./Myposts/MyPostsContainer";
 
 
 const Profile =(props)=>{
-
+        console.log("owner", props);
     return(
             <div>
-                <ProfileInfo profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
+                <ProfileInfo isOwner={props.isOwner} profile={props.profile} status={props.status} updateStatus={props.updateStatus} savePhoto={props.savePhoto}/>
                 <MyPostContainer/>
             </div>
         );

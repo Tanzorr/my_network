@@ -29,7 +29,18 @@ export const usersAPI ={
     unfollow(userId){
        return  instance.delete(`${baseURL}follow/${userId}`)
 
+    },
+
+    savePhoto(photoFile){
+        const formData = new FormData();
+        formData.append("image",photoFile);
+        return instance.put(`${baseURL}profile/photo`,formData, {
+            headers:{
+                'Content-Type':'multipart/form-data'
+            }
+        });
     }
+
 
 };
 
@@ -46,8 +57,6 @@ export const profileAPI ={
     updateStatus(status){
         return instance.put(`${baseURL}profile/status`,{status});
     },
-
-
 
 
 };

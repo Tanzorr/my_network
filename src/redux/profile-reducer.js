@@ -5,6 +5,7 @@ const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
 const DELETE_POST ='DELETE_POST';
+const SAVE_PHOTO_SUCCESS ='SAVE_PHOTO_SUCCESS';
 
 let initialState ={
 
@@ -43,6 +44,10 @@ const profileReducer =(state=initialState , action)=> {
         case DELETE_POST:{
             return {...state,posts: state.posts.filter(p=>p.id !=action.postId)}
         }
+
+        case SAVE_PHOTO_SUCCESS:{
+            return {...state, profile:{...state.profile, posts: action.photos} }
+        }
         default:
             return state;
     }
@@ -55,8 +60,9 @@ export const addPostActionCreator = (newPostBody)=>{
     }
 };
 
-
 export const setStatus =(status)=>({type: SET_STATUS, status});
+
+export const savePostoSuccess =(photos)=>({type:SAVE_PHOTO_SUCCESS, photos})
 
 export  const setUserProfile = (profile)=>{
 
@@ -68,7 +74,8 @@ export  const setUserProfile = (profile)=>{
 
 export  const getStatus = (userId)=>{
     return async (dispatch)=>{
-       let response = await profileAPI.getStatus(userId)
+       let response = await profileAPI.getStatus(userId);
+       alert(response)
         dispatch (setStatus(response.data));
     }
 };
@@ -88,13 +95,22 @@ export const deletePost =(postId)=>({type:DELETE_POST, postId})
 
 
 export const getUser = (userId)=>{
-    return (dispatch)=>{
-        dispatch(toggleFollowingProgress(true,userId));
-        usersAPI.getProfile(userId).then(
-            data=>{ dispatch (setUserProfile(data));}
-        )
+    return async (dispatch)=> {
+        dispatch(toggleFollowingProgress(true, userId));
+        let data = await usersAPI.getProfile(userId);
+        dispatch(setUserProfile(data));
     }
-}
+};
+
+export const savePhoto = (file)=>{
+    return async (dispatch)=> {
+        let reaponse = await usersAPI.savePhoto(file);
+        if (reaponse.data.resultCode === 0){
+            dispatch(savePostoSuccess(reaponse.data.photos))
+        }
+    }
+};
+
 
 
 export default profileReducer;

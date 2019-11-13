@@ -1,4 +1,4 @@
-import React, {Component, Suspense} from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import Navbar from "./componets/Navbar/Navbar";
 //import ProfileContainer from "./componets/Profile/ProfileContainer";
@@ -35,8 +35,8 @@ class App extends Component{
                     <HeaderContainer/>
                     <Navbar/>
                     <div className='app-wrapper-content'>
-                        <Route path='/dialogs' render={withSuspense(ProfileContainer)}/>
-                        <Route path='/profile/:userId?'render={withSuspense(DialogsContainer)}/>
+                        <Route path='/dialogs' render={withSuspense(DialogsContainer)}/>
+                        <Route path='/profile/:userId?'render={withSuspense(ProfileContainer)}/>
                         <Route path='/users' component={UsersContainer}/>
                         <Route path='/login' component={LoginPage}/>
                     </div>
