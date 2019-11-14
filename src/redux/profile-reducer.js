@@ -1,5 +1,6 @@
 import {toggleFollowingProgress} from "./users-reducer";
 import {usersAPI,profileAPI} from "../api/api";
+import {stopSubmit} from "redux-form";
 
 const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
@@ -104,12 +105,27 @@ export const getUser = (userId)=>{
 
 export const savePhoto = (file)=>{
     return async (dispatch)=> {
-        let reaponse = await usersAPI.savePhoto(file);
+        let reaponse = await profileAPI.savePhoto(file);
         if (reaponse.data.resultCode === 0){
             dispatch(savePostoSuccess(reaponse.data.photos))
         }
     }
 };
+
+export const saveProfile = (profile)=>{
+
+    return async (dispatch,getState)=> {
+       const userId = getState().auth.userId
+        const response = await profileAPI.saveProfile(profile);
+          if (response.data.resultCode === 0){
+            dispatch(getUser(userId));
+          }else {
+
+              dispatch(stopSubmit("edit-profile",{_error: response.data.messages[0]}))
+          }
+    }
+};
+
 
 
 

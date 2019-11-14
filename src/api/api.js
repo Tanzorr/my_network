@@ -31,15 +31,7 @@ export const usersAPI ={
 
     },
 
-    savePhoto(photoFile){
-        const formData = new FormData();
-        formData.append("image",photoFile);
-        return instance.put(`${baseURL}profile/photo`,formData, {
-            headers:{
-                'Content-Type':'multipart/form-data'
-            }
-        });
-    }
+
 
 
 };
@@ -57,6 +49,25 @@ export const profileAPI ={
     updateStatus(status){
         return instance.put(`${baseURL}profile/status`,{status});
     },
+    savePhoto(photoFile){
+        const formData = new FormData();
+        formData.append("image",photoFile);
+        return instance.put(`${baseURL}profile/photo`,formData, {
+            headers:{
+                'Content-Type':'multipart/form-data'
+            }
+        });
+    },
+
+    saveProfile(profile){
+        console.log("profile2",profile);
+       let response = instance.put(`${baseURL}profile`,profile);
+       console.log("response",response.data);
+
+        return response;
+    }
+
+
 
 
 };

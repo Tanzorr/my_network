@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Profile from "./Profile";
 import * as axios from "axios";
 import {connect} from "react-redux";
-import { setUserProfile, updateStatus, getUser, getStatus,savePhoto} from "../../redux/profile-reducer";
+import { setUserProfile, updateStatus, getUser, getStatus,savePhoto,saveProfile} from "../../redux/profile-reducer";
 import { withRouter } from "react-router";
 
 class ProfileContainer extends Component {
@@ -61,4 +61,4 @@ let mapStateToProps = (state) =>({
 
 
 let WithUrlDataContainerComponent = withRouter(ProfileContainer);
-export default connect(mapStateToProps,{setUserProfile,updateStatus,getUser, getStatus,savePhoto})(WithUrlDataContainerComponent);
+export default connect(mapStateToProps,{setUserProfile,updateStatus,getUser, getStatus,savePhoto, saveProfile})(WithUrlDataContainerComponent);

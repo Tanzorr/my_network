@@ -7,7 +7,13 @@ const Profile =(props)=>{
         console.log("owner", props);
     return(
             <div>
-                <ProfileInfo isOwner={props.isOwner} profile={props.profile} status={props.status} updateStatus={props.updateStatus} savePhoto={props.savePhoto}/>
+                <ProfileInfo isOwner={props.isOwner}
+                             profile={props.profile}
+                             status={props.status}
+                             saveProfile={props.saveProfile}
+                             updateStatus={props.updateStatus}
+                             savePhoto={props.savePhoto}
+                />
                 <MyPostContainer/>
             </div>
         );
