@@ -77,7 +77,7 @@ export const authAPI = {
             return instance.get(`${baseURL}auth/me`)
         },
 
-        login(email,password, rememberMe=false){
+        login(email,password, rememberMe=false, captcha=null){
 
             return instance.post(`${baseURL}auth/login`,{email,password,rememberMe});
         },
@@ -86,5 +86,14 @@ export const authAPI = {
             return instance.delete(`${baseURL}auth/login`);
         }
 };
+
+export const securityhAPI = {
+    getCaptchaUrl(){
+        return instance.get(`${baseURL}security/get-captcha-url`);
+    },
+
+
+};
+
 
 

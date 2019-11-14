@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef8556c4-75a0-43be-9aa4-9e95c5123f24" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/componets/Profile/ProfileInfo/ProfileDataForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Profile/ProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/ProfileContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Profile/ProfileInfo/ProfileInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/ProfileInfo/ProfileInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Profile/ProfileInfo/ProfoleImfo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/ProfileInfo/ProfoleImfo.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Profile/ProfileStatus/ProfileStatusWithHook.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/ProfileStatus/ProfileStatusWithHook.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/auth-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -259,7 +254,7 @@
       <workItem from="1573557477065" duration="14767000" />
       <workItem from="1573637895237" duration="2224000" />
       <workItem from="1573642841020" duration="13433000" />
-      <workItem from="1573725452178" duration="12946000" />
+      <workItem from="1573725452178" duration="16994000" />
     </task>
     <servers />
   </component>
