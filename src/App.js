@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
 import Navbar from "./componets/Navbar/Navbar";
-//import ProfileContainer from "./componets/Profile/ProfileContainer";
-//import DialogsContainer from "./componets/Dialogs/DialogsContainer";
 import UsersContainer from "./componets/Users/UsersContainer";
 import HeaderContainer from "./componets/Header/HeaderContainer";
 import LoginPage from "./componets/Login/login";
@@ -14,6 +12,7 @@ import {BrowserRouter, Route} from "react-router-dom";
 import { withRouter } from "react-router";
 import store from "./redux/redux-store";
 import {withSuspense} from "./hoc/withSuspense";
+import Redirect from "react-router-dom/es/Redirect";
 
 const DialogsContainer = React.lazy(()=>import("./componets/Dialogs/DialogsContainer"));
 const ProfileContainer = React.lazy(()=>import("./componets/Profile/ProfileContainer"));
@@ -22,8 +21,16 @@ const ProfileContainer = React.lazy(()=>import("./componets/Profile/ProfileConta
 
 
 class App extends Component{
+    catchAllUnhandledErrors=(reason, promise)=>{
+        alert("Some error occured");
+    };
     componentDidMount() {
         this.props.initializeApp();
+        window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
+    };
+
+    componentWillUnmount() {
+        window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors);
     }
 
     render(){
@@ -35,10 +42,12 @@ class App extends Component{
                     <HeaderContainer/>
                     <Navbar/>
                     <div className='app-wrapper-content'>
+                        <Route exact path='/'render={()=><Redirect to={"/profile"}/>}/>
                         <Route path='/dialogs' render={withSuspense(DialogsContainer)}/>
                         <Route path='/profile/:userId?'render={withSuspense(ProfileContainer)}/>
                         <Route path='/users' component={UsersContainer}/>
                         <Route path='/login' component={LoginPage}/>
+
                     </div>
                 </div>);
 }

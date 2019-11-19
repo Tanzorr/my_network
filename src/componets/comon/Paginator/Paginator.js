@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import styles from "./Paginator.modyle..css";
+import cn from "classnames";
 
 
 
@@ -18,7 +19,7 @@ let Paginator = ({currentPage,totalUsersCount,pageSize,onpageChanged,portionSize
     let leftPortionPageNumber = (portionNumber - 1) * portionSize + 1;
     let rightPortionPageNumber = portionNumber * portionSize;
 
-    return <div className={styles.paginator}>
+    return <div className={styles.paginator} >
         {portionNumber > 1 &&
         <button onClick={() => {
             setPortionNumber(portionNumber - 1)
@@ -27,8 +28,9 @@ let Paginator = ({currentPage,totalUsersCount,pageSize,onpageChanged,portionSize
         <div>
             {
                 pages.filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber).map(p => {
-                    return <span key={p} className={ ({[styles.selectedPage]: currentPage === p},styles.pageNumber)}
-
+                    return <span className={ cn({[styles.selectedPage]: currentPage ===p},
+                        styles.pageNumber) }
+                                 key={p}
                                  onClick={(e) => {
                                      onpageChanged(p)
                                  }}>{p}</span>

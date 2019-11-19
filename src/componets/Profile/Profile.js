@@ -14,7 +14,7 @@ const Profile =(props)=>{
                              updateStatus={props.updateStatus}
                              savePhoto={props.savePhoto}
                 />
-                <MyPostContainer/>
+
             </div>
         );
 };

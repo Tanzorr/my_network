@@ -30,7 +30,7 @@ class ProfileContainer extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log('Pc',this.props.match.params.userId);
+
         if (this.props.match.params.userId !=prevProps.match.params.userId){
             this.refreshProfile();
         }
@@ -38,7 +38,7 @@ class ProfileContainer extends Component {
     }
 
     render(props) {
-        console.log('container props',this.props);
+
         return (
             <Profile {...this.props}
                      isOwner={!this.props.match.params.userId}

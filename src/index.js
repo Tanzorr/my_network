@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import SamuraiJSApp from './App';
 import * as serviceWorker from './serviceWorker';
+import {Redirect} from "react-router-dom";
 
 ReactDOM.render(
        <SamuraiJSApp/>
