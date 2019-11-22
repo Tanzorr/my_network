@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef8556c4-75a0-43be-9aa4-9e95c5123f24" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/componets/comon/Clock/Clock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Header/Header.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Navbar/Navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Navbar/Navbar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Profile/ProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/ProfileContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Profile/ProfileStatus/ProfileStatusWithHook.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/ProfileStatus/ProfileStatusWithHook.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Users/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Users/Users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Users/users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Users/users.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/comon/Paginator/Paginator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/comon/Paginator/Paginator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Navbar/Navbar.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -268,7 +256,10 @@
       <workItem from="1573725452178" duration="17463000" />
       <workItem from="1573815726402" duration="2335000" />
       <workItem from="1574074375016" duration="11000" />
-      <workItem from="1574167106859" duration="6215000" />
+      <workItem from="1574167106859" duration="6481000" />
+      <workItem from="1574240882350" duration="213000" />
+      <workItem from="1574336212817" duration="5225000" />
+      <workItem from="1574348904234" duration="607000" />
     </task>
     <servers />
   </component>
