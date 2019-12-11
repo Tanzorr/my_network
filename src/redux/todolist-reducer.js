@@ -11,7 +11,10 @@ const initialState = {
     {id:1, title:"todo list", description: "description first Task", complited: false, status: 1, priority:2, starDate: Date(),deadline: Date, todoListId:"requred", order:3, addedDate:Date },
     {id:2, title:"todo list2", description: "description first Task", complited: false, status: 1, priority:2, starDate: Date(),deadline: Date, todoListId:"requred", order:3, addedDate:Date },
     {id:3, title:"todo list 3", description: "description first Task", complited: false, status: 1, priority:2, starDate: Date(),deadline: Date, todoListId:"requred", order:3, addedDate:Date }
-    ]
+    ],
+
+    toDoListTile: "TodoListTitle"
+
 }
 
 const  todoListReducer =(state=initialState , action)  =>{
@@ -52,6 +55,9 @@ export const getTasksList= ()=>{
 
     }
 };
+
+    console.log( todoAPI.putTodoList("title34"));
+    console.log( todoAPI.getTodoList());
 
 
 export  default todoListReducer;

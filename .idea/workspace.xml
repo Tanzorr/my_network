@@ -2,26 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef8556c4-75a0-43be-9aa4-9e95c5123f24" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/componets/Todolist/TodoItems.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componets/Todolist/TodoListsContatiner.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componets/Todolist/TuduLists.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componets/Todolist/todolist.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componets/comon/Clock/DigitalDispley.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componets/quikreact/ButtonCounter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componets/quikreact/Content.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componets/quikreact/Counter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/componets/quikreact/Logger.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/todolist-reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componets/Todolist/AddTodoList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Dialogs/Dialogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Dialogs/Dialogs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Dialogs/DialogsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Dialogs/DialogsContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Navbar/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Users/UsersContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Users/UsersContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/comon/Clock/Clock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/comon/Clock/Clock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Todolist/TodoItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Todolist/TodoItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Todolist/TodoListsContatiner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Todolist/TodoListsContatiner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/todolist-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/todolist-reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -289,7 +274,7 @@
       <workItem from="1575559649774" duration="619000" />
       <workItem from="1575629206111" duration="19027000" />
       <workItem from="1575884491862" duration="179000" />
-      <workItem from="1576067657567" duration="6637000" />
+      <workItem from="1576067657567" duration="9072000" />
     </task>
     <servers />
   </component>

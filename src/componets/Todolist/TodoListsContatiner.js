@@ -9,7 +9,7 @@ import {
     getUserss
 } from "../../redux/users-selectors";
 import TodoItems from "./TodoItems"
-import {} from "../../redux/todolist-reducer";
+import AddTodoList from "./AddTodoList"
 
 class TodoListsContatiner extends Component {
     componentDidMount() {
@@ -23,6 +23,7 @@ class TodoListsContatiner extends Component {
         return (
             <div>
                 <h1>Todo List</h1>
+                <AddTodoList title={this.props.todoList.toDoListTile} />
                 <ul>
                     {tasks.map((task)=> <TodoItems key={task.id} task={task.title}/>)}
                 </ul>
