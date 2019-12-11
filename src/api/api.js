@@ -16,6 +16,7 @@ export const usersAPI ={
             .then(response=>{
                 return response.data;
             })
+
     },
 
     getProfile(userId){
@@ -30,6 +31,9 @@ export const usersAPI ={
        return  instance.delete(`${baseURL}follow/${userId}`)
 
     },
+
+
+
 
 
 
@@ -92,8 +96,19 @@ export const securityhAPI = {
         return instance.get(`${baseURL}security/get-captcha-url`);
     },
 
-
 };
+
+
+export  const todoAPI = {
+    getTodoList(){
+        return instance.get(`${baseURL}/todo-lists`).then((response)=>{return response});
+    },
+
+    putTodoList(title){
+        return instance.post(`${baseURL}/todo-lists`,{title})
+    }
+
+}
 
 
 

@@ -13,9 +13,10 @@ class Navbar extends Component {
                     <div><NavLink to="/profile" activeClassName={s.active} >Profile</NavLink></div>
                     <div><NavLink to="/dialogs" activeClassName={s.active} >Messges</NavLink></div>
                     <div><NavLink to="/users" activeClassName={s.active} >Users</NavLink></div>
-                    <div><a href="" >News</a></div>
-                    <div><a href="" >Music</a></div>
-                    <div><a href="" >Settings</a></div>
+                    <div><NavLink to="/todolist" activeClassName={s.active} >Todolist</NavLink></div>
+                    {/*<div><a href="" >News</a></div>*/}
+                    {/*<div><a href="" >Music</a></div>*/}
+                    {/*<div><a href="" >Settings</a></div>*/}
                 </nav>);
     }
 }

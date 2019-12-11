@@ -14,13 +14,15 @@ import store from "./redux/redux-store";
 import {withSuspense} from "./hoc/withSuspense";
 import Redirect from "react-router-dom/es/Redirect";
 
+import TodoListContatiner from "./componets/Todolist/TodoListsContatiner";
+
 const DialogsContainer = React.lazy(()=>import("./componets/Dialogs/DialogsContainer"));
 const ProfileContainer = React.lazy(()=>import("./componets/Profile/ProfileContainer"));
 
 
 
-
 class App extends Component{
+
     catchAllUnhandledErrors=(reason, promise)=>{
         alert("Some error occured");
     };
@@ -46,9 +48,12 @@ class App extends Component{
                         <Route path='/dialogs' render={withSuspense(DialogsContainer)}/>
                         <Route path='/profile/:userId?'render={withSuspense(ProfileContainer)}/>
                         <Route path='/users' component={UsersContainer}/>
+                        <Route path='/todolist' component={TodoListContatiner}/>
                         <Route path='/login' component={LoginPage}/>
 
                     </div>
+
+
                 </div>);
 }
 

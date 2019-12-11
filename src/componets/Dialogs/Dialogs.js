@@ -9,6 +9,10 @@ import {maxLengthCriator, required} from "../../utils/validators";
 
 
 class Dialogs extends Component {
+    componentDidMount() {
+        this.props.getDialogs()
+    }
+
     render(props) {
 
         let state = this.props;
@@ -24,6 +28,7 @@ class Dialogs extends Component {
 
         let addNewMessage = (v) => {
             this.props.addMessage(v.newMessageBody);
+            v.newMessageBody = "";
            };
 
 

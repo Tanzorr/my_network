@@ -9,10 +9,13 @@ import thunkMiddleware from "redux-thunk";
 import { composeWithDevTools } from 'redux-devtools-extension';
 import {reducer as formReducer} from 'redux-form';
 import appReducer from "./app-reducer";
+import todoListrReducer from "./todolist-reducer"
+
 
 let reducers = combineReducers({
     profilePage:profileReducer,
     dialogsPage:dialogsReducer,
+    todoList:todoListrReducer,
     sidebar:sidebarReducer,
     usersPage:usersReducer,
     auth:authReducer,

@@ -17,7 +17,7 @@ import {
     getFollovingInProgress,
     getIsFetching,
     getPageSize,
-    getTotalUsersCount, getUserss, getUserssSuper
+    getTotalUsersCount, getUserss
 } from "../../redux/users-selectors";
 
 class UsersAPIComponent extends Component {
