@@ -18,12 +18,14 @@ const initialState = {
 }
 
 const  todoListReducer =(state=initialState , action)  =>{
+
     switch (action) {
-        case GET_TASKS ===action.type:
-            return state
+
         case SET_TASKS === action.type:
+            alert(SET_TASKS);
+            console.log("set taske",action.type);
             return {
-                ...state, tasks: action.tasks
+               ...state, todolists:action.tasks
             }
     }
 
@@ -41,23 +43,26 @@ const getTasksListActionCreatotr =()=>{
 const setTasksLists = (tasks)=>{
     return{
         type:SET_TASKS,
-        tasks
+        tasks:tasks
     }
 };
 
-export const getTasksList= ()=>{
-    return async ()=>{
+export const getTasksList = ()=>{
+    return async (dispatch)=>{
         //dispatch(toggleIsFetching(true));
-        let data = todoAPI.getTodoList();
-        console.log("Data tasks",data);
+        let data = await todoAPI.getTodoList();
+        console.log("Data",data.data);
+        return dispatch(setTasksLists(data.data));
        // dispatch(toggleIsFetching(false));
-        setTasksLists(data.items);
+       // dispatch(setTasksLists(data.items));
 
     }
 };
 
-    console.log( todoAPI.putTodoList("title34"));
-    console.log( todoAPI.getTodoList());
+    // console.log( todoAPI.putTodoList("title34"));
+    // console.log( todoAPI.getTodoList());
+    // console.log( "getTaskList", getTasksList());
+
 
 
 export  default todoListReducer;

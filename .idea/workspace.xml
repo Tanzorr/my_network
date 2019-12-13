@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef8556c4-75a0-43be-9aa4-9e95c5123f24" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/componets/Todolist/AddTodoList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Todolist/TodoItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Todolist/TodoItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Profile/ProfileStatus/ProfileStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Profile/ProfileStatus/ProfileStatus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Todolist/AddTodoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Todolist/AddTodoList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componets/Todolist/TodoListsContatiner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Todolist/TodoListsContatiner.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/todolist-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/todolist-reducer.js" afterDir="false" />
     </list>
@@ -275,6 +275,10 @@
       <workItem from="1575629206111" duration="19027000" />
       <workItem from="1575884491862" duration="179000" />
       <workItem from="1576067657567" duration="9072000" />
+      <workItem from="1576140917160" duration="24000" />
+      <workItem from="1576161158327" duration="4825000" />
+      <workItem from="1576233064979" duration="46000" />
+      <workItem from="1576250501955" duration="2991000" />
     </task>
     <servers />
   </component>
