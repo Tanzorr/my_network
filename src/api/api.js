@@ -104,6 +104,11 @@ export  const todoAPI = {
         return instance.get(`${baseURL}/todo-lists`).then((response)=>{return response});
     },
 
+    removeTodoList(id){
+
+        return instance.delete(`${baseURL}/todo-lists/${id}`).then((response)=>{return response});
+    },
+
     putTodoList(title){
         return instance.post(`${baseURL}/todo-lists`,{title})
     }

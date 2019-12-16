@@ -1,9 +1,9 @@
 import {todoAPI} from "../api/api";
-import {updeatObjecrInArray} from "../utils/object-helpers";
-import {toggleIsFetching} from "./users-reducer";
+
 
 const GET_TASKS = 'GET_TASKS';
-const SET_TASKS ='SET_TASKS';
+const SET_TASKSLIST='SET_TASKSLIST';
+const REMOVE_TASKS_LIST = 'REMOVE_TASKS_LIST'
 
 const initialState = {
     todolists:[
@@ -19,14 +19,19 @@ const initialState = {
 
 const  todoListReducer =(state=initialState , action)  =>{
 
-    switch (action) {
-
-        case SET_TASKS === action.type:
-            alert(SET_TASKS);
-            console.log("set taske",action.type);
+    switch (action.type) {
+        case SET_TASKSLIST:
             return {
-               ...state, todolists:action.tasks
-            }
+               ...state, todolists: action.tasks
+            };
+
+        case REMOVE_TASKS_LIST:
+            const newLis = state.todolists.filter(item => {
+               return item.id !== action.id
+            });
+            return {
+                ...state, todolists: newLis
+            };
     }
 
     return state;
@@ -40,28 +45,44 @@ const getTasksListActionCreatotr =()=>{
     }
 };
 
-const setTasksLists = (tasks)=>{
+const setTasksListsAC = (tasks)=>{
     return{
-        type:SET_TASKS,
-        tasks:tasks
+        type:SET_TASKSLIST,
+        tasks
     }
 };
 
-export const getTasksList = ()=>{
+const removeTasksListAC = (id)=>{
+    return{
+        type:REMOVE_TASKS_LIST,
+        id
+    }
+};
+
+export const getTasksLists = ()=>{
     return async (dispatch)=>{
-        //dispatch(toggleIsFetching(true));
+       // dispatch(toggleIsFetching(true));
         let data = await todoAPI.getTodoList();
         console.log("Data",data.data);
-        return dispatch(setTasksLists(data.data));
+        return dispatch(setTasksListsAC(data.data));
        // dispatch(toggleIsFetching(false));
-       // dispatch(setTasksLists(data.items));
+
 
     }
 };
 
-    // console.log( todoAPI.putTodoList("title34"));
-    // console.log( todoAPI.getTodoList());
-    // console.log( "getTaskList", getTasksList());
+export const removeTasksList = (id)=>{
+    return async (dispatch)=>{
+        // dispatch(toggleIsFetching(true));
+         await todoAPI.removeTodoList(id);
+
+         dispatch(removeTasksListAC(id));
+
+    }
+};
+
+todoAPI.putTodoList("Test Title");
+
 
 
 

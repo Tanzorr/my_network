@@ -79,7 +79,7 @@ export const getUsers=(page,pageSize)=> {
 const followUnfolowFlow = async (dispatch,userId, apiMethod, actionCreator)=>{
     dispatch(toggleFollowingProgress(false,userId));
     let response = await apiMethod.follow(userId);
-    if (response.data.resultCode == 0){
+    if (response.data.resultCode === 0){
         actionCreator(userId)
     }
     dispatch(toggleFollowingProgress(false,userId));

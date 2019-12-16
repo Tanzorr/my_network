@@ -10,7 +10,7 @@ import {
 } from "../../redux/users-selectors";
 import TodoItems from "./TodoItems"
 import AddTodoList from "./AddTodoList"
-import {getTasksList} from "../../redux/todolist-reducer"
+import {getTasksLists, removeTasksList} from "../../redux/todolist-reducer"
 
 class TodoListsContatiner extends Component {
     constructor(props){
@@ -23,13 +23,13 @@ class TodoListsContatiner extends Component {
 
 
     componentDidMount() {
-        console.log("componet dim mount",this.props.getTasksList());
+        this.props.getTasksLists()
 
     }
 
     render(props) {
         console.log("todo props",this.props.todoList.todolists);
-        let  tasks = this.props.todoList.todolists;
+        let  tasksLists = this.props.todoList.todolists;
 
         return (
             <div>
@@ -37,7 +37,7 @@ class TodoListsContatiner extends Component {
                 <AddTodoList title={this.state.defaultTitle} />
 
                 <ul>
-                    {tasks.map((task)=> <TodoItems key={task.id} task={task.title}/>)}
+                    {tasksLists.map((tasksList)=> <TodoItems key={tasksList.id} task={tasksList.title} remove={this.props.removeTasksList} id={tasksList.id}/>)}
                 </ul>
             </div>
         );
@@ -51,4 +51,4 @@ let mapStateToProps = (state)=>{
     }
 };
 
-export default connect(mapStateToProps, {getTasksList})(TodoListsContatiner);
+export default connect(mapStateToProps, {getTasksLists,removeTasksList})(TodoListsContatiner);
