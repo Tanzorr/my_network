@@ -6,7 +6,7 @@ const TodoItems = ({id,remove,task})=>{
         console.log("id",id);
     return(
 
-        <li className={s.item}><a onClick={()=>{remove(id)}}>{task}</a></li>
+        <li className={s.item}><b>{task}</b><a onClick={()=>{remove(id)}} className={s.btnDanger}>Delete</a></li>
     )
 };
 
