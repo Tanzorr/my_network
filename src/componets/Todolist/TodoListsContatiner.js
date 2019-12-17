@@ -37,7 +37,7 @@ class TodoListsContatiner extends Component {
                 <AddTodoList title={this.state.defaultTitle} add ={this.props.addTasksList} />
 
                 <ul>
-                    {tasksLists.map((tasksList)=> <TodoItems key={tasksList.id} task={tasksList.title} remove={this.props.removeTasksList}   id={tasksList.id}/>)}
+                    {tasksLists.map((tasksList)=> <TodoItems key={tasksList.id} task={tasksList.title} remove={this.props.removeTasksList} edit={this.props.addTasksList}  id={tasksList.id}/>)}
                 </ul>
             </div>
         );

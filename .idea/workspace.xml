@@ -7,7 +7,6 @@
       <change beforePath="$PROJECT_DIR$/src/componets/Todolist/TodoItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Todolist/TodoItems.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componets/Todolist/TodoListsContatiner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Todolist/TodoListsContatiner.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/componets/Todolist/todolist.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Todolist/todolist.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/todolist-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/todolist-reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -282,7 +281,7 @@
       <workItem from="1576250501955" duration="2991000" />
       <workItem from="1576488134925" duration="599000" />
       <workItem from="1576499865414" duration="10270000" />
-      <workItem from="1576576628336" duration="2607000" />
+      <workItem from="1576576628336" duration="6505000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-const AddTodoList = ({add, title})=>{
+const AddTodoList = ({add, title,deactivat })=>{
     let [editMode,  setEditMode] =  useState(false);
     let [defaultTitle,  setTitle] =  useState(title);
 
@@ -23,7 +23,7 @@ const AddTodoList = ({add, title})=>{
     return (
         <p>
             <input onChange={onTitleChange} autoFocus={true} type="text" value={defaultTitle}/>
-            <input type="button"  onClick={()=>{add(defaultTitle); clineInput(); } }value="add"/>
+            <input type="button"  onClick={()=>{add(defaultTitle); clineInput(); deactivat();} }value="add"/>
         </p>
     )
 }
