@@ -16,7 +16,6 @@ export const usersAPI ={
             .then(response=>{
                 return response.data;
             })
-
     },
 
     getProfile(userId){
@@ -31,12 +30,6 @@ export const usersAPI ={
        return  instance.delete(`${baseURL}follow/${userId}`)
 
     },
-
-
-
-
-
-
 
 };
 
@@ -70,10 +63,6 @@ export const profileAPI ={
 
         return response;
     }
-
-
-
-
 };
 
 export const authAPI = {
@@ -109,11 +98,11 @@ export  const todoAPI = {
         return instance.delete(`${baseURL}/todo-lists/${id}`).then((response)=>{return response});
     },
 
-    putTodoList(title){
-        return instance.post(`${baseURL}/todo-lists`,{title})
+    putTodoList(title, description){
+        return instance.post(`${baseURL}/todo-lists`,{title, description})
     }
 
-}
+};
 
 
 

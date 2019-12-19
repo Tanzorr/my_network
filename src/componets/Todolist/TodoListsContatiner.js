@@ -1,16 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {
-    getCurrentPage,
-    getFollovingInProgress,
-    getIsFetching,
-    getPageSize,
-    getTotalUsersCount,
-    getUserss
-} from "../../redux/users-selectors";
+import {Redirect} from "react-router-dom";
 import TodoItems from "./TodoItems"
 import AddTodoList from "./AddTodoList"
-import {getTasksLists, removeTasksList, addTasksList} from "../../redux/todolist-reducer"
+import {getTasksLists, removeTasksList} from "../../redux/todolist-reducer"
 
 class TodoListsContatiner extends Component {
     constructor(props){
@@ -24,17 +17,22 @@ class TodoListsContatiner extends Component {
 
     componentDidMount() {
         this.props.getTasksLists()
-
     }
 
     render(props) {
         console.log("todo props",this.props.todoList.todolists);
         let  tasksLists = this.props.todoList.todolists;
 
+        let addTList = ()=>{
+           this.props.history.push("/todolistsadd")
+
+        };
+
+
         return (
             <div>
-                <h1>Todo List</h1>
-                <AddTodoList title={this.state.defaultTitle} add ={this.props.addTasksList} />
+                <h1>Todo Lists</h1>
+               <button onClick={addTList}>Add  todoList</button>
 
                 <ul>
                     {tasksLists.map((tasksList)=> <TodoItems key={tasksList.id} task={tasksList.title} remove={this.props.removeTasksList}   id={tasksList.id}/>)}
@@ -51,4 +49,4 @@ let mapStateToProps = (state)=>{
     }
 };
 
-export default connect(mapStateToProps, {getTasksLists,removeTasksList, addTasksList})(TodoListsContatiner);
+export default connect(mapStateToProps, {getTasksLists,removeTasksList})(TodoListsContatiner);

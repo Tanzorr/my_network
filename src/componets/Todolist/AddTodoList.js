@@ -1,8 +1,12 @@
 import React, {useState, useEffect} from 'react';
+import {connect} from "react-redux";
+import {addTasksList} from "../../redux/todolist-reducer"
 
-const AddTodoList = ({add, title})=>{
+
+const AddTodoList = (props)=>{
     let [editMode,  setEditMode] =  useState(false);
-    let [defaultTitle,  setTitle] =  useState(title);
+    let [Title,  setTitle] =  useState("");
+    let [Description,  setDescription] =  useState("");
 
     const activateMode = ()=>{
         setEditMode(true)
@@ -17,15 +21,33 @@ const AddTodoList = ({add, title})=>{
         setTitle(e.currentTarget.value);
     };
 
-    console.log("Add",add);
+    const onDecscriptionChange = (e)=>{
+        setDescription(e.currentTarget.value);
+    };
+
+    console.log("Add", props);
+
 
 
     return (
-        <p>
-            <input onChange={onTitleChange} autoFocus={true} type="text" value={defaultTitle}/>
-            <input type="button"  onClick={()=>{add(defaultTitle); clineInput(); } }value="add"/>
-        </p>
+        <>
+            <div>
+                <label>Title: </label>
+                <input onChange={onTitleChange} autoFocus={true} type="text" value={Title}/>
+            </div>
+           <div>
+               <label>Description: </label>
+               <textarea onChange={onDecscriptionChange}  >{Description}</textarea>
+           </div>
+
+            <input type="button"  onClick={()=>{props.addTasksList(Title, Description)} }value="add"/>
+        </>
     )
 }
 
-export default AddTodoList;
+
+const mapStateToProps =(state)=>({
+
+});
+
+export default connect(mapStateToProps,{addTasksList})(AddTodoList);

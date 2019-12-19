@@ -109,9 +109,9 @@ export const removeTasksList = (id)=>{
 };
 
 
-export const addTasksList = (title)=>{
+export const addTasksList = (title, descriptin)=>{
     return async (dispatch)=>{
-        await todoAPI.putTodoList(title);
+        await todoAPI.putTodoList(title, descriptin);
         dispatch(addTasksListAC(title));
     }
 };
