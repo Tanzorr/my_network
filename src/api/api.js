@@ -89,18 +89,27 @@ export const securityhAPI = {
 
 
 export  const todoAPI = {
-    getTodoList(){
+    getTodoLists(){
         return instance.get(`${baseURL}/todo-lists`).then((response)=>{return response});
     },
 
     removeTodoList(id){
-
         return instance.delete(`${baseURL}/todo-lists/${id}`).then((response)=>{return response});
     },
 
     putTodoList(title, description){
         return instance.post(`${baseURL}/todo-lists`,{title, description})
-    }
+    },
+
+    editTodoList(id){
+        return instance.put(`${baseURL}/todo-lists`,{id})
+    },
+
+    getTodoList(id) {
+        return instance.get(`${baseURL}/todo-lists/${id}/tasks`).then((response)=>{return response});
+    },
+
+
 
 };
 

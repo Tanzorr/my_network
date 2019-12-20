@@ -17,6 +17,7 @@ class TodoListsContatiner extends Component {
 
     componentDidMount() {
         this.props.getTasksLists()
+
     }
 
     render(props) {
@@ -26,6 +27,10 @@ class TodoListsContatiner extends Component {
         let addTList = ()=>{
            this.props.history.push("/todolistsadd")
 
+        };
+
+        let getTasksList = (id)=>{
+            this.props.history.push("/todolist/"+id)
         };
 
 

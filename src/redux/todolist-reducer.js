@@ -5,6 +5,8 @@ const GET_TASKS = 'GET_TASKS';
 const SET_TASKSLIST='SET_TASKSLIST';
 const REMOVE_TASKS_LIST = 'REMOVE_TASKS_LIST';
 const ADD_TASKS_LIST ='ADD_TASKS_LIST';
+const SHOW_TASK_LIST = 'SHOW_TASK_LIST';
+
 
 const initialState = {
     todolists:[
@@ -14,7 +16,12 @@ const initialState = {
     {id:3, title:"todo list 3", description: "description first Task", complited: false, status: 1, priority:2, starDate: Date(),deadline: Date, todoListId:"requred", order:3, addedDate:Date }
     ],
 
-    toDoListTile: "TodoListTitle"
+    todolist:{
+        todoListTile: "TodoListTitle",
+        todoListDescription: "TodoListDescriotion",
+
+    }
+
 
 }
 
@@ -44,10 +51,18 @@ const  todoListReducer =(state=initialState , action)  =>{
                     deadline: Date,
                     todoListId:"requred",
                     order:3,
-                    addedDate:Date };
+                    addedDate:Date
+            };
+
             return{
                 ...state,
                 todolists: [...state.todolists,taskList]
+            };
+
+        case SET_TASKSLIST:
+            return {
+                ...state,
+                tidolist: action.data
             };
 
 
@@ -86,14 +101,33 @@ const addTasksListAC = (title)=>{
     }
 };
 
+const showTaskListAC = (data)=>{
+    return{
+        type:SHOW_TASK_LIST,
+        data:data
+    }
+};
+
+
+
+
+
+
+export const getTasksList = (id)=>{
+
+    return async (dispatch)=>{
+        let data = await todoAPI.getTodoList(id)
+
+        return  dispatch(showTaskListAC(data.data))
+    }
+};
+
 export const getTasksLists = ()=>{
     return async (dispatch)=>{
        // dispatch(toggleIsFetching(true));
-        let data = await todoAPI.getTodoList();
-        console.log("Data",data.data);
+        let data = await todoAPI.getTodoLists();
         return dispatch(setTasksListsAC(data.data));
        // dispatch(toggleIsFetching(false));
-
 
     }
 };
@@ -116,7 +150,7 @@ export const addTasksList = (title, descriptin)=>{
     }
 };
 
-//todoAPI.putTodoList("Test Title");
+
 
 
 
