@@ -4,10 +4,26 @@
     font-size: 18px;
 }
 
-.item.btn-danger{
+.btnDanger{
     color: #fff;
     background: red;
     padding: 4px;
     border-radius: 4px;
     margin: 5px;
+}
+
+.btnPrimery{
+    color: #fff;
+    background: blue;
+    padding: 4px;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+.inputWrap{
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+    margin-top: 30px;
+
 }

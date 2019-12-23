@@ -28,6 +28,10 @@ class TodoListsContatiner extends Component {
 
         };
 
+        let editTlist = (id)=>{
+            this.props.history.push(`/editTodoList/${id}`)
+        };
+
 
         return (
             <div>
@@ -35,7 +39,7 @@ class TodoListsContatiner extends Component {
                <button onClick={addTList}>Add  todoList</button>
 
                 <ul>
-                    {tasksLists.map((tasksList)=> <TodoItems key={tasksList.id} task={tasksList.title} remove={this.props.removeTasksList}   id={tasksList.id}/>)}
+                    {tasksLists.map((tasksList)=> <TodoItems key={tasksList.id} edit={editTlist} task={tasksList.title} remove={this.props.removeTasksList}   id={tasksList.id}/>)}
                 </ul>
             </div>
         );

@@ -1,16 +1,24 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from "react-redux";
-import {addTasksList} from "../../redux/todolist-reducer"
+import {getTasksListTile} from "../../redux/todolist-reducer"
 
 
-const AddTodoList = (props)=>{
+const EdditTodoList = (props)=>{
     let [editMode,  setEditMode] =  useState(false);
     let [Title,  setTitle] =  useState("");
-    let [Description,  setDescription] =  useState("");
+    let [Description,  setDescription] =  useState(" ");
+
+    console.log("Edit props",props);
 
     const activateMode = ()=>{
         setEditMode(true)
     };
+
+    useEffect(()=>{
+            props.getTasksListTile(props.match.params.todolistId)
+       },
+
+   [] );
 
 
 
@@ -29,24 +37,20 @@ const AddTodoList = (props)=>{
 
 
     return (
-        <>
+        <div>
             <div>
                 <label>Title: </label>
                 <input onChange={onTitleChange} autoFocus={true} type="text" value={Title}/>
             </div>
-           <div>
-               <label>Description: </label>
-               <textarea onChange={onDecscriptionChange}  >{Description}</textarea>
-           </div>
 
-            <input type="button"  onClick={()=>{props.addTasksList(Title, Description); redirect(); }  }value="add"/>
-        </>
+            <input type="button" value="Edit"/>
+        </div>
     )
 }
 
 
 const mapStateToProps =(state)=>({
-
+        state
 });
 
-export default connect(mapStateToProps,{addTasksList})(AddTodoList);
+export default connect(mapStateToProps,{getTasksListTile})(EdditTodoList);
