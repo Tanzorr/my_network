@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from "react-redux";
-import {getTasksListTile, getTasksLists} from "../../redux/todolist-reducer"
+import {getTasksListTile, getTasksLists, editTasksList} from "../../redux/todolist-reducer"
 
 
 const EdditTodoList = ({
-match, todoList, getTasksLists, getTasksListTile, history
+match, todoList, getTasksLists, getTasksListTile, history,editTasksList
 })=>{
     let [editMode,  setEditMode] =  useState(false);
     let [Title,  setTitle] =  useState("");
     let [Description,  setDescription] =  useState(" ");
 
+  //  setTitle(toDoListTile[0].title);
 
     const activateMode = ()=>{
         setEditMode(true)
@@ -17,14 +18,16 @@ match, todoList, getTasksLists, getTasksListTile, history
 
     const matchVal = match.params.todolistId;
     const toDoListTile = todoList.toDoListTile;
-
+    useEffect(()=>{
+        setTitle(toDoListTile[0].title);
+    },[]);
 
     useEffect(()=>{
             console.log("Todolist",toDoListTile);
             setTitle(toDoListTile[0].title);
-            getTasksLists()
+            getTasksLists();
         if(toDoListTile !== 'TodoListTitle') {
-
+            getTasksLists();
             console.log("Todolist",toDoListTile);
             setTitle(toDoListTile[0].title);
         } else {
@@ -62,10 +65,10 @@ match, todoList, getTasksLists, getTasksListTile, history
                 <input onChange={onTitleChange} autoFocus={true} type="text" value={Title}/>
             </div>
 
-            <input type="button" value="Edit"/>
+            <input type="button" value="Edit" onClick={()=>{editTasksList(Title); redirect()}}/>
         </div>
     )
-}
+};
 
 
 const mapStateToProps =(state)=> {
@@ -74,4 +77,4 @@ const mapStateToProps =(state)=> {
     }
 };
 
-export default connect(mapStateToProps,{getTasksListTile, getTasksLists})(EdditTodoList);
+export default connect(mapStateToProps,{getTasksListTile, getTasksLists, editTasksList})(EdditTodoList);
