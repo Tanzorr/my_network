@@ -65,7 +65,7 @@ const  todoListReducer =(state=initialState , action)  =>{
 
             };
         case PUT_TASK_LIST_TITLE:
-                alert()
+
             return {
                 ...state,
                 toDoListTile:action.title

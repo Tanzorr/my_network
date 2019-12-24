@@ -18,9 +18,14 @@ match, todoList, getTasksLists, getTasksListTile, history
     const matchVal = match.params.todolistId;
     const toDoListTile = todoList.toDoListTile;
 
+
     useEffect(()=>{
+            console.log("Todolist",toDoListTile);
+            setTitle(toDoListTile[0].title);
+            getTasksLists()
         if(toDoListTile !== 'TodoListTitle') {
-            console.log('setTitle(toDoListTile[0].title);');
+
+            console.log("Todolist",toDoListTile);
             setTitle(toDoListTile[0].title);
         } else {
             console.log(' getTitle(match);');
