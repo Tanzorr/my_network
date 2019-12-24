@@ -4,11 +4,7 @@ import {getTasksListTile, getTasksLists} from "../../redux/todolist-reducer"
 
 
 const EdditTodoList = ({
-match,
-todoList,
-getTasksLists,
-getTasksListTile,
-history
+match, todoList, getTasksLists, getTasksListTile, history
 })=>{
     let [editMode,  setEditMode] =  useState(false);
     let [Title,  setTitle] =  useState("");
@@ -23,9 +19,6 @@ history
     const toDoListTile = todoList.toDoListTile;
 
     useEffect(()=>{
-        if(matchVal !== toDoListTile[0].id) {
-            getTitle(matchVal);
-        }
         if(toDoListTile !== 'TodoListTitle') {
             console.log('setTitle(toDoListTile[0].title);');
             setTitle(toDoListTile[0].title);
