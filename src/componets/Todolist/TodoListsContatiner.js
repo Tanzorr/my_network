@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
 import TodoItems from "./TodoItems"
 import AddTodoList from "./AddTodoList"
-import {getTasksLists, removeTasksList} from "../../redux/todolist-reducer"
+import {getTasksLists, removeTasksList,putTitleTasklist} from "../../redux/todolist-reducer"
 
 class TodoListsContatiner extends Component {
     constructor(props){
@@ -28,8 +28,9 @@ class TodoListsContatiner extends Component {
 
         };
 
-        let editTlist = (id)=>{
+        let editTlist = (id,title)=>{
             this.props.history.push(`/editTodoList/${id}`)
+            this.props.putTitleTasklist(title)
         };
 
 
@@ -53,4 +54,4 @@ let mapStateToProps = (state)=>{
     }
 };
 
-export default connect(mapStateToProps, {getTasksLists,removeTasksList})(TodoListsContatiner);
+export default connect(mapStateToProps, {getTasksLists,removeTasksList, putTitleTasklist})(TodoListsContatiner);

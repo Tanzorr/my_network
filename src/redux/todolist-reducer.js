@@ -7,6 +7,9 @@ const REMOVE_TASKS_LIST = 'REMOVE_TASKS_LIST';
 const ADD_TASKS_LIST ='ADD_TASKS_LIST';
 const EDIT_TASK ='EDIT_TASK';
 const GET_TASKSLIST_TITLE ='GET_TASKSLIST_TITLE';
+const PUT_TASK_LIST_TITLE = 'PUT_TASK_LIST_TITLE';
+
+
 
 const initialState = {
     todolists:[
@@ -53,19 +56,25 @@ const  todoListReducer =(state=initialState , action)  =>{
             };
 
         case GET_TASKSLIST_TITLE:
+           // console.log('sssssss', state);
             return {
                 ...state,
                 toDoListTile: state.todolists.filter(item=>{
                     return item.id  === action.id
                 })
+
+            };
+        case PUT_TASK_LIST_TITLE:
+
+            return {
+                ...state,
+                toDoListTile:action.title
             }
-
-
     }
 
     return state;
 
-}
+};
 
 
 
@@ -77,10 +86,10 @@ const setTasksListsAC = (tasks)=>{
     }
 };
 
-const getTasksListTitleAC = (data)=>{
+const getTasksListTitleAC = (id)=>{
     return{
         type:GET_TASKSLIST_TITLE,
-        data
+        id
     }
 };
 
@@ -105,6 +114,13 @@ const edditTasklistAC =(data)=>{
         type:EDIT_TASK ,
         data
     }
+};
+
+const putTasklistTitleAC =(title)=>{
+    return{
+        type:PUT_TASK_LIST_TITLE,
+        title
+    }
 }
 
 
@@ -119,12 +135,10 @@ export const getTasksLists = ()=>{
 };
 
 export const getTasksListTile = (id)=>{
-
+    console.log('getTasksListTile', id);
     return async (dispatch)=>{
         // dispatch(toggleIsFetching(true));
-        let data = await todoAPI.getTodoList(id);
-        console.log("GetListData", data.data);
-        return dispatch(getTasksListTitleAC(data.data));
+        return dispatch(getTasksListTitleAC(id));
         // dispatch(toggleIsFetching(false));
     }
 };
@@ -155,6 +169,13 @@ export const editTasksList = (title, descriptin,id)=>{
         dispatch(edditTasklistAC(data.data));
     }
 };
+
+export const putTitleTasklist = (title) =>{
+    return async (dispatch)=>{
+
+        dispatch(putTasklistTitleAC(title));
+    }
+}
 //todoAPI.putTodoList("Test Title");
 
 

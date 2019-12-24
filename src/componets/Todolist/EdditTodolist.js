@@ -1,25 +1,48 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from "react-redux";
-import {getTasksListTile} from "../../redux/todolist-reducer"
+import {getTasksListTile, getTasksLists} from "../../redux/todolist-reducer"
 
 
-const EdditTodoList = (props)=>{
+const EdditTodoList = ({
+match,
+todoList,
+getTasksLists,
+getTasksListTile,
+history
+})=>{
     let [editMode,  setEditMode] =  useState(false);
     let [Title,  setTitle] =  useState("");
     let [Description,  setDescription] =  useState(" ");
 
-    console.log("Edit props",props);
 
     const activateMode = ()=>{
         setEditMode(true)
     };
 
+    const matchVal = match.params.todolistId;
+    const toDoListTile = todoList.toDoListTile;
+
     useEffect(()=>{
-            props.getTasksListTile(props.match.params.todolistId)
+        if(matchVal !== toDoListTile[0].id) {
+            getTitle(matchVal);
+        }
+        if(toDoListTile !== 'TodoListTitle') {
+            console.log('setTitle(toDoListTile[0].title);');
+            setTitle(toDoListTile[0].title);
+        } else {
+            console.log(' getTitle(match);');
+            getTitle(matchVal);
+        }
        },
 
-   [] );
+   [matchVal, toDoListTile] );
 
+    const getTitle = async (match) => {
+       await getTasksLists();
+       await getTasksListTile(match);
+    };
+
+    console.log('TITI', Title);
 
 
     const onTitleChange = (e)=>{
@@ -31,15 +54,13 @@ const EdditTodoList = (props)=>{
     };
 
     const redirect = ()=>{
-        props.history.push("/todolists")
+        history.push("/todolists")
     };
-
-
 
     return (
         <div>
             <div>
-                <label>Title: </label>
+                <label>Title:{} </label>
                 <input onChange={onTitleChange} autoFocus={true} type="text" value={Title}/>
             </div>
 
@@ -49,8 +70,10 @@ const EdditTodoList = (props)=>{
 }
 
 
-const mapStateToProps =(state)=>({
-        state
-});
+const mapStateToProps =(state)=> {
+    return {
+        todoList: state.todoList
+    }
+};
 
-export default connect(mapStateToProps,{getTasksListTile})(EdditTodoList);
+export default connect(mapStateToProps,{getTasksListTile, getTasksLists})(EdditTodoList);
