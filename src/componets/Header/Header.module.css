@@ -1,8 +1,47 @@
 .header{
     grid-area: h;
     background: green;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.header.logo{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.header .logo a{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    list-style-type: none;
+    text-decoration: none;
+    display: block;
+    margin: auto;
 }
 
 .header img{
     width: 100px;
+}
+
+.loginBlok {
+    float: right;
+    color: #fff;
+}
+
+.loginBlok a{
+    color: white;
+    margin: 40px;
+    text-decoration: none;
+}
+
+.logout{
+    background: blue;
+    color: #fff;
+    font-size: 16px;
+    border: solid 2px yellow;
+    padding: 4px 13px;
+    border-radius: 10px;
 }
