@@ -1,15 +1,20 @@
 import React from 'react';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostContainer from "./Myposts/MyPostsContainer";
-import Preloader from "../comon/prloader/Preloader";
 
 
 const Profile =(props)=>{
-
+        console.log("owner", props);
     return(
             <div>
-                <ProfileInfo profile={props.profile}/>
-                <MyPostContainer/>
+                <ProfileInfo isOwner={props.isOwner}
+                             profile={props.profile}
+                             status={props.status}
+                             saveProfile={props.saveProfile}
+                             updateStatus={props.updateStatus}
+                             savePhoto={props.savePhoto}
+                />
+
             </div>
         );
 };

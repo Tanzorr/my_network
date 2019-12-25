@@ -1,56 +1,75 @@
+import {usersAPI,dialogAPI} from "../api/api";
+import {getUsers, setTotalUsersCount, setUsers, toggleIsFetching} from "./users-reducer";
+
 const ADD_MESSAGE = 'ADD-MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT ='UPDATE-NEW-MESSAGE-TEXT';
+const SET_USERS_DIALOGS = 'SET_USERS_DIALOGS';
+
 
 let initialState = {
-    messages:[
-        {id: 1, message: 'Dimych'},
-        {id: 2, message: 'Alex'},
-    ],
+    messages:[],
     dialogs:[
         {id: 1, name: 'Dimych'},
         {id: 2, name: 'Alex'},
     ],
-
-    newMessageText:''
 };
 
 const dialogsReducer =(state=initialState, action)=> {
 
     switch (action.type) {
         case ADD_MESSAGE:
+
             let newMessage = {
                 id: 4,
-                message: state.newMessageText,
+                message: action.newMessageBody,
                 likesCount: 0
             };
             return{
                 ...state,
-                messages: [...state.messages,newMessage],
-                newMessageText: ''
-            }
-            case
-                UPDATE_NEW_MESSAGE_TEXT:
-                        return {
-                            ...state,
-                          newMessageText:action.newText
-                        }
-                        default:
+                messages: [...state.messages,newMessage]
+            };
+        case SET_USERS_DIALOGS:
+
+           return {
+               ...state,
+               dialogs: action.users
+           }
+
+
+            default:
                 return state;
            };
 };
 
-export const addMessageActionCreator = ()=>{
+
+export const getUserss =(page,pageSize)=> {
+    return async (dispatch)=> {
+        dispatch(toggleIsFetching(true));
+        let data = await usersAPI.getUsers(page, pageSize);
+        dispatch(toggleIsFetching(false));
+        dispatch(setDialogUsersActionCreator(data.items));
+        dispatch(setTotalUsersCount(data.totalCount));
+
+    }
+};
+
+
+export const addMessageActionCreator = (newMessageBody)=>{
     return{
-        type:ADD_MESSAGE
+        type:ADD_MESSAGE,
+        newMessageBody
+    }
+};
+
+
+
+export const  setDialogUsersActionCreator =(users)=>{
+    return{
+        type:SET_USERS_DIALOGS,
+        users
     }
 }
 
-export const updateNewMessageActionCreator = (text)=>{
-    return{
-        type:UPDATE_NEW_MESSAGE_TEXT,
-        newText:text
-    }
-}
+
 
 
 

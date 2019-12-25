@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef8556c4-75a0-43be-9aa4-9e95c5123f24" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/componets/Todolist/EditTodolistContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Users/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Users/Users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/componets/Users/UsersContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Users/UsersContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Todolist/EdditTodolist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Todolist/EdditTodolist.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,37 +49,34 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="106" />
-    <option name="y" value="475" />
-    <option name="width" value="1476" />
-    <option name="height" value="498" />
-  </component>
   <component name="ProjectId" id="1QuzXBpteGFQmpOtP4x7K3WXOEL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/componets/Header" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/componets/Header" />
-      <recent name="$PROJECT_DIR$/src/componets/Dialogs" />
-      <recent name="$PROJECT_DIR$/src/componets/Profile/Myposts" />
+      <recent name="$PROJECT_DIR$/src/componets/Profile/ProfileStatus" />
+      <recent name="$PROJECT_DIR$/src/componets/Users" />
       <recent name="$PROJECT_DIR$/src/redux" />
-      <recent name="$PROJECT_DIR$/src/componets/Dialogs/Messages" />
+      <recent name="$PROJECT_DIR$/src/componets/comon/FormsControl" />
+      <recent name="$PROJECT_DIR$/src/componets/Header" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/componets/comon/paginator" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/redux" />
       <recent name="$PROJECT_DIR$/src/componets/Profile/Myposts" />
       <recent name="$PROJECT_DIR$/src/componets/Profile" />
-      <recent name="$PROJECT_DIR$/src/componets/Navbar" />
-      <recent name="$PROJECT_DIR$/src/componets/Header" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -98,13 +91,81 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="App.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="App.js" working-dir="$PROJECT_DIR$/src">
+  <component name="RunManager" selected="Jest.ProfileStatus component.after creation span with status should be displayed">
+    <configuration name="ProfileStatus component" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/componets/Profile/ProfileStatus/ProfileStatus.test.js" />
+      <test-names>
+        <test-name value="ProfileStatus component" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="ProfileStatus component.after creation span with status should be displayed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/componets/Profile/ProfileStatus/ProfileStatus.test.js" />
+      <test-names>
+        <test-name value="ProfileStatus component" />
+        <test-name value="after creation span with status should be displayed" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="ProfileStatus component.status from props should be in the state" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/componets/Profile/ProfileStatus/ProfileStatus.test.js" />
+      <test-names>
+        <test-name value="ProfileStatus component" />
+        <test-name value="status from props should be in the state" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="after deleting length should't be decremnt if id is incorredt" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/redux/profile-reducer.test.js" />
+      <test-names>
+        <test-name value="after deleting length should't be decremnt if id is incorredt" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="renders without crashing" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/App.test.js" />
+      <test-names>
+        <test-name value="renders without crashing" />
+      </test-names>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.App.js" />
+        <item itemvalue="Jest.ProfileStatus component.after creation span with status should be displayed" />
+        <item itemvalue="Jest.ProfileStatus component.status from props should be in the state" />
+        <item itemvalue="Jest.ProfileStatus component" />
+        <item itemvalue="Jest.renders without crashing" />
+        <item itemvalue="Jest.after deleting length should't be decremnt if id is incorredt" />
       </list>
     </recent_temporary>
   </component>
@@ -175,7 +236,55 @@
       <workItem from="1571656368788" duration="5270000" />
       <workItem from="1571736914802" duration="5717000" />
       <workItem from="1571905845083" duration="296000" />
-      <workItem from="1571910026987" duration="5376000" />
+      <workItem from="1571910026987" duration="6232000" />
+      <workItem from="1571998063264" duration="10932000" />
+      <workItem from="1572343131850" duration="16330000" />
+      <workItem from="1572429096848" duration="9892000" />
+      <workItem from="1572517433328" duration="12002000" />
+      <workItem from="1572602737643" duration="13000" />
+      <workItem from="1572607654779" duration="13777000" />
+      <workItem from="1572947508728" duration="15889000" />
+      <workItem from="1573036848688" duration="9626000" />
+      <workItem from="1573054810886" duration="51000" />
+      <workItem from="1573137773262" duration="5169000" />
+      <workItem from="1573208294963" duration="6983000" />
+      <workItem from="1573467599563" duration="57000" />
+      <workItem from="1573474358207" duration="9915000" />
+      <workItem from="1573553762749" duration="80000" />
+      <workItem from="1573557477065" duration="14767000" />
+      <workItem from="1573637895237" duration="2224000" />
+      <workItem from="1573642841020" duration="13433000" />
+      <workItem from="1573725452178" duration="17463000" />
+      <workItem from="1573815726402" duration="2335000" />
+      <workItem from="1574074375016" duration="11000" />
+      <workItem from="1574167106859" duration="6481000" />
+      <workItem from="1574240882350" duration="213000" />
+      <workItem from="1574336212817" duration="5225000" />
+      <workItem from="1574348904234" duration="607000" />
+      <workItem from="1574417214051" duration="1400000" />
+      <workItem from="1574437820771" duration="2649000" />
+      <workItem from="1574688051833" duration="184000" />
+      <workItem from="1574781649647" duration="1801000" />
+      <workItem from="1574850380717" duration="3231000" />
+      <workItem from="1574860365746" duration="739000" />
+      <workItem from="1574863359015" duration="669000" />
+      <workItem from="1575023168693" duration="3758000" />
+      <workItem from="1575279233881" duration="701000" />
+      <workItem from="1575559649774" duration="619000" />
+      <workItem from="1575629206111" duration="19027000" />
+      <workItem from="1575884491862" duration="179000" />
+      <workItem from="1576067657567" duration="9072000" />
+      <workItem from="1576140917160" duration="24000" />
+      <workItem from="1576161158327" duration="4825000" />
+      <workItem from="1576233064979" duration="46000" />
+      <workItem from="1576250501955" duration="2991000" />
+      <workItem from="1576488134925" duration="599000" />
+      <workItem from="1576499865414" duration="10270000" />
+      <workItem from="1576576628336" duration="2607000" />
+      <workItem from="1576749119092" duration="111000" />
+      <workItem from="1576751017711" duration="2676000" />
+      <workItem from="1577184956566" duration="6064000" />
+      <workItem from="1577194174333" duration="4535000" />
     </task>
     <servers />
   </component>

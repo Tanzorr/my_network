@@ -1,3 +1,10 @@
+.u_cantainer{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
 .usersPhoto{
     width: 100px;
     height: 100px;
