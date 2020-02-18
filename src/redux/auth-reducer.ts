@@ -4,17 +4,26 @@ import {stopSubmit} from "redux-form";
 const SET_USERS_DATA = 'my-netvorck/auth/SET-USERS-DATA';
 const GET_CAPTCHA_URL_SUCCESS = 'my-netvorck/auth/GET_CAPTCHA_URL_SUCCESS';
 
+export type InitialStateType2 ={
+    userId: number | null ,
+    email:string |null,
+    login:string |null,
+    isAuth:boolean,
+    captchaUrl:string |  null
+}
 
 
-let initialState ={
-    userId: null,
-    email:null,
-    login:null,
-    isAuth:false,
+let initialState={
+    userId: null as number | null,
+    email:null as number | null,
+    login:null as number | null,
+    isAuth:false as boolean | null,
     captchaUrl:null //if null then captcha is not required
 };
 
-const authReducer =(state=initialState , action)=> {
+export type InitialStateType = typeof initialState;
+
+const authReducer =(state=initialState , action:any): InitialStateType=> {
     switch (action.type){
         case SET_USERS_DATA:
         case GET_CAPTCHA_URL_SUCCESS:
@@ -26,18 +35,37 @@ const authReducer =(state=initialState , action)=> {
             return state;
     }
 };
+type SetAuthUserDataActionPayloadType ={
+    userId: number | null
+    email:string | null
+    login:string | null
+    isAuth:boolean | null
+}
 
-export const setAuthUserData = (userId,email, login, isAuth)=>({
-    type:SET_USERS_DATA,
-    payload:{userId, email, login, isAuth}
+type SetAuthUserDataActionType ={
+    type: typeof SET_USERS_DATA,
+    payload: SetAuthUserDataActionPayloadType
+}
+
+
+export const setAuthUserData = (userId:number|null,email:string |null, login:string | null, isAuth:boolean | null):SetAuthUserDataActionType=>({
+    type:SET_USERS_DATA, payload:
+        {userId,email,login,isAuth}
 });
 
-export const getCapthaUrlSuccess = (captchaUrl)=>({
+type GetCaptCapthaUrlSuccessActionType = {
+    type: typeof GET_CAPTCHA_URL_SUCCESS
+    payload:{captchaUrl:string}
+}
+
+export const getCapthaUrlSuccess = (captchaUrl:string): GetCaptCapthaUrlSuccessActionType=>({
     type:GET_CAPTCHA_URL_SUCCESS,
     payload:{captchaUrl}
 });
 
-export const getAuthUserData =() => async(dispatch)=>{
+
+
+export const getAuthUserData =() => async(dispatch:any)=>{
     let response = await authAPI.me();
 
         if(response.data.resultCode === 0){
@@ -48,7 +76,7 @@ export const getAuthUserData =() => async(dispatch)=>{
 };
 
 
-export const login =(email,password,rememberMe,captcha) =>async (dispatch)=>{
+export const login =(email:string,password:string,rememberMe:boolean,captcha:string) =>async (dispatch:any)=>{
    let response = await authAPI.login(email,password,rememberMe, captcha);
         console.log("responce data",response.data.messages);
         if(response.data.resultCode === 0){
@@ -59,13 +87,13 @@ export const login =(email,password,rememberMe,captcha) =>async (dispatch)=>{
             }
 
                 let message = response.data.messages.length > 0 ? response.data.messages[0] : "Some error";
-                dispatch(stopSubmit("login",{_error: message}));
+               // dispatch(stopSubmit("login",{_error: message}));
             }
 
 };
 
 
-export const getCaptchaUrl =() =>async (dispatch)=>{
+export const getCaptchaUrl =() =>async (dispatch:any)=>{
    const responce =await securityhAPI.getCaptchaUrl();
    const capthaUrl = responce.data.url;
    dispatch(getCapthaUrlSuccess(capthaUrl));
@@ -75,8 +103,8 @@ export const getCaptchaUrl =() =>async (dispatch)=>{
 
 
 
-export const logout =() =>(dispatch)=>{
-    authAPI.logout().then(response=>{
+export const logout =() =>(dispatch:any)=>{
+    authAPI.logout().then((response:any)=>{
         if(response.data.resultCode === 0){
             dispatch(setAuthUserData(null, null, null, false))
         }

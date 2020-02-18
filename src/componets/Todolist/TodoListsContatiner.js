@@ -40,7 +40,7 @@ class TodoListsContatiner extends Component {
                <button onClick={addTList}>Add  todoList</button>
 
                 <ul>
-                    {tasksLists.map((tasksList)=> <TodoItems key={tasksList.id} edit={editTlist} task={tasksList.title} remove={this.props.removeTasksList}   id={tasksList.id}/>)}
+                    {tasksLists.map((tasksList)=> <TodoItems key={tasksList.id} edit={editTlist} todoList={tasksList.title} remove={this.props.removeTasksList}   id={tasksList.id}/>)}
                 </ul>
             </div>
         );

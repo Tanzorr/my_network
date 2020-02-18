@@ -1,11 +1,12 @@
 import * as axios from "axios";
 
+
 let baseURL ='https://social-network.samuraijs.com/api/1.0/';
 
 const instance =  axios.create({
     withCredentials:true,
     headers: {
-        "API-KEY": "246fdf62-0bab-41d9-a587-285f4f1dc67e"
+        "API-KEY": "8b70a129-0d50-4fb8-99e7-15c4b370ea08"
     }
 });
 
@@ -108,10 +109,21 @@ export  const todoAPI = {
 
     editTodoList(title, description,id){
         return instance.put(`${baseURL}/todo-lists${id}`,{title, description})
+    },
+
+    ///todo-lists/{todolistId}/tasks
+    addTask(title, description, completed, status,priority,startDate,deadline,todoListId,order,addedDate){
+        return instance.post(`${baseURL}/todo-lists/${todoListId}/tasks`,{title, description,completed,status,priority,startDate,deadline,order,addedDate})
     }
 
 
 };
 
+
+todoAPI.addTask("task","description",true,3,2,Date.now(), Date.now(),"e1d6b5ff-4389-4d9e-89c3-95f0befc96b7",3, Date.now());
+
+let taskList = todoAPI.getTodoList("e1d6b5ff-4389-4d9e-89c3-95f0befc96b7");
+
+console.log("TaskList",taskList);
 
 

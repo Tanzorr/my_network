@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef8556c4-75a0-43be-9aa4-9e95c5123f24" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/componets/Todolist/TodoListItem/TodoListSingle.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/componets/types/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Todolist/TodoItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Todolist/TodoItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/componets/Todolist/TodoListsContatiner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componets/Todolist/TodoListsContatiner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/app-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/app-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/auth-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sidebar-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sidebar-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/todolist-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/todolist-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +48,9 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+        <option value="tsconfig.json" />
       </list>
     </option>
   </component>
@@ -46,12 +63,6 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="106" />
-    <option name="y" value="475" />
-    <option name="width" value="1476" />
-    <option name="height" value="498" />
-  </component>
   <component name="ProjectId" id="1QuzXBpteGFQmpOtP4x7K3WXOEL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -62,11 +73,23 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -126,7 +149,16 @@
       <workItem from="1569784058594" duration="714000" />
       <workItem from="1573313466439" duration="551000" />
       <workItem from="1577276276173" duration="279000" />
-      <workItem from="1581784517242" duration="350000" />
+      <workItem from="1581784517242" duration="1966000" />
+      <workItem from="1581787027214" duration="1797000" />
+      <workItem from="1581788856909" duration="2585000" />
+      <workItem from="1581843474474" duration="112000" />
+      <workItem from="1581843606218" duration="926000" />
+      <workItem from="1581849661893" duration="1370000" />
+      <workItem from="1581851050941" duration="1150000" />
+      <workItem from="1581852220445" duration="2648000" />
+      <workItem from="1581938917035" duration="11004000" />
+      <workItem from="1582019959900" duration="12965000" />
     </task>
     <servers />
   </component>
@@ -161,9 +193,25 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="491" y="291" key="com.intellij.ide.util.TipDialog" timestamp="1581784518318">
+    <state x="170" y="127" width="1330" height="673" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1582037897129">
       <screen x="70" y="27" width="1530" height="873" />
     </state>
-    <state x="491" y="291" key="com.intellij.ide.util.TipDialog/70.27.1530.873@70.27.1530.873" timestamp="1581784518318" />
+    <state x="170" y="127" width="1330" height="673" key="com.intellij.history.integration.ui.views.FileHistoryDialog/70.27.1530.873@70.27.1530.873" timestamp="1582037897129" />
+    <state x="491" y="291" key="com.intellij.ide.util.TipDialog" timestamp="1582019965249">
+      <screen x="70" y="27" width="1530" height="873" />
+    </state>
+    <state x="491" y="291" key="com.intellij.ide.util.TipDialog/70.27.1530.873@70.27.1530.873" timestamp="1582019965249" />
+    <state x="480" y="32" width="709" height="864" key="find.popup" timestamp="1581944160598">
+      <screen x="70" y="27" width="1530" height="873" />
+    </state>
+    <state x="480" y="32" width="709" height="864" key="find.popup/70.27.1530.873@70.27.1530.873" timestamp="1581944160598" />
+    <state x="499" y="207" key="run.anything.popup" timestamp="1582033939486">
+      <screen x="70" y="27" width="1530" height="873" />
+    </state>
+    <state x="499" y="207" key="run.anything.popup/70.27.1530.873@70.27.1530.873" timestamp="1582033939485" />
+    <state x="498" y="221" width="672" height="678" key="search.everywhere.popup" timestamp="1581786685385">
+      <screen x="70" y="27" width="1530" height="873" />
+    </state>
+    <state x="498" y="221" width="672" height="678" key="search.everywhere.popup/70.27.1530.873@70.27.1530.873" timestamp="1581786685385" />
   </component>
 </project>

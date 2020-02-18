@@ -1,6 +1,7 @@
 import {todoAPI} from "../api/api";
 
 
+
 const GET_TASKS = 'GET_TASKS';
 const SET_TASKSLIST='SET_TASKSLIST';
 const REMOVE_TASKS_LIST = 'REMOVE_TASKS_LIST';
@@ -9,21 +10,51 @@ const EDIT_TASK ='EDIT_TASK';
 const GET_TASKSLIST_TITLE ='GET_TASKSLIST_TITLE';
 const PUT_TASK_LIST_TITLE = 'PUT_TASK_LIST_TITLE';
 
+type TaskType={
+    id:number
+    title:string
+    description:string
+    comlited:boolean
+    status:number
+    priority:number
+    starDate:any
+    deadline:any
+    todoListId:string
+    order:string
+    addedDate:any
+}
 
-
-const initialState = {
-    todolists:[
-
-    {id:1, title:"todo list", description: "description first Task", complited: false, status: 1, priority:2, starDate: Date(),deadline: Date, todoListId:"requred", order:3, addedDate:Date },
-    {id:2, title:"todo list2", description: "description first Task", complited: false, status: 1, priority:2, starDate: Date(),deadline: Date, todoListId:"requred", order:3, addedDate:Date },
-    {id:3, title:"todo list 3", description: "description first Task", complited: false, status: 1, priority:2, starDate: Date(),deadline: Date, todoListId:"requred", order:3, addedDate:Date }
-    ],
-
-    toDoListTile: "TodoListTitle"
+type TodoListType={
+    id:number
+    addedDate:any
+    order:number | null
+    title:string | null
 
 }
 
-const  todoListReducer =(state=initialState , action)  =>{
+// const Tasks={
+//     taskists:[
+//
+//         {id:1, title:"todo list", description: "description first Task", complited: false, status: 1, priority:2, starDate: Date(),deadline: Date,
+//             todoListId:"requred", order:3, addedDate:Date },
+//         {id:2, title:"todo list2", description: "description first Task", complited: false, status: 1, priority:2, starDate: Date(),deadline: Date, todoListId:"requred", order:3, addedDate:Date },
+//         {id:3, title:"todo list 3", description: "description first Task", complited: false, status: 1, priority:2, starDate: Date(),deadline: Date, todoListId:"requred", order:3, addedDate:Date }
+//     ]as Array<TaskType>,
+// }
+const initialState = {
+    todolists:[
+        {id:1, addedDate:Date(), order:2, title:"title1"},
+        {id:2, addedDate:Date(), order:2, title:"title2"},
+        {id:3, addedDate:Date(), order:2, title:"title3"}
+    ]as any,
+
+    toDoListTile: "TodoListTitle" as string
+
+}
+
+type InitialStateTodoListType = typeof initialState
+
+const  todoListReducer =(state=initialState , action:any):InitialStateTodoListType  =>{
 
     switch (action.type) {
         case SET_TASKSLIST:
@@ -32,7 +63,7 @@ const  todoListReducer =(state=initialState , action)  =>{
             };
 
         case REMOVE_TASKS_LIST:
-            const newLis = state.todolists.filter(item => {
+            const newLis = state.todolists.filter((item:TodoListType )=> {
                return item.id !== action.id
             });
             return {
@@ -59,7 +90,7 @@ const  todoListReducer =(state=initialState , action)  =>{
            // console.log('sssssss', state);
             return {
                 ...state,
-                toDoListTile: state.todolists.filter(item=>{
+                toDoListTile: state.todolists.filter((item:any)=>{
                     return item.id  === action.id
                 })
 
@@ -77,46 +108,72 @@ const  todoListReducer =(state=initialState , action)  =>{
 };
 
 
+type SetTasksListsACType ={
+    type:typeof SET_TASKSLIST
+    tasks:Array<TodoListType>
+}
 
-
-const setTasksListsAC = (tasks)=>{
+const setTasksListsAC = (tasks:Array<TodoListType>):SetTasksListsACType=>{
     return{
         type:SET_TASKSLIST,
         tasks
     }
 };
 
-const getTasksListTitleAC = (id)=>{
+type SetTasksListsTitleACType ={
+    type:typeof GET_TASKSLIST_TITLE
+    id:number
+}
+
+const getTasksListTitleAC = (id:number):SetTasksListsTitleACType=>{
     return{
         type:GET_TASKSLIST_TITLE,
         id
     }
 };
 
+type RemoveListsTitleACType ={
+    type:typeof REMOVE_TASKS_LIST
+    id:number
+}
 
-const removeTasksListAC = (id)=>{
+const removeTasksListAC = (id:number)=>{
     return{
         type:REMOVE_TASKS_LIST,
         id
     }
 };
 
-const addTasksListAC = (title)=>{
+type AddTasksListCType ={
+    type:typeof ADD_TASKS_LIST
+    title:string
+}
+
+const addTasksListAC = (title:string):AddTasksListCType=>{
     return{
         type:ADD_TASKS_LIST,
         title
     }
 };
 
+type EditTasksListsACType ={
+    type:typeof EDIT_TASK
+    data:any
+}
 
-const edditTasklistAC =(data)=>{
+const edditTasklistAC =(data:any):EditTasksListsACType=>{
     return{
         type:EDIT_TASK ,
         data
     }
 };
 
-const putTasklistTitleAC =(title)=>{
+type PuttTasksListsACType ={
+    type:typeof PUT_TASK_LIST_TITLE
+    title:string
+}
+
+const putTasklistTitleAC =(title:string):PuttTasksListsACType=>{
     return{
         type:PUT_TASK_LIST_TITLE,
         title
@@ -125,7 +182,7 @@ const putTasklistTitleAC =(title)=>{
 
 
 export const getTasksLists = ()=>{
-    return async (dispatch)=>{
+    return async (dispatch:any)=>{
        // dispatch(toggleIsFetching(true));
         let data = await todoAPI.getTodoLists();
         console.log("Data",data.data);
@@ -134,9 +191,9 @@ export const getTasksLists = ()=>{
     }
 };
 
-export const getTasksListTile = (id)=>{
+export const getTasksListTile = (id:number)=>{
     console.log('getTasksListTile', id);
-    return async (dispatch)=>{
+    return async (dispatch:any)=>{
         // dispatch(toggleIsFetching(true));
         return dispatch(getTasksListTitleAC(id));
         // dispatch(toggleIsFetching(false));
@@ -144,8 +201,8 @@ export const getTasksListTile = (id)=>{
 };
 
 
-export const removeTasksList = (id)=>{
-    return async (dispatch)=>{
+export const removeTasksList = (id:number)=>{
+    return async (dispatch:any)=>{
 
          await todoAPI.removeTodoList(id);
 
@@ -155,23 +212,23 @@ export const removeTasksList = (id)=>{
 };
 
 
-export const addTasksList = (title, descriptin)=>{
-    return async (dispatch)=>{
+export const addTasksList = (title:string, descriptin:string)=>{
+    return async (dispatch:any)=>{
         await todoAPI.addTodoList(title, descriptin);
         dispatch(addTasksListAC(title));
     }
 };
 
 
-export const editTasksList = (title, descriptin,id)=>{
-    return async (dispatch)=>{
+export const editTasksList = (title:string, descriptin:string,id:number)=>{
+    return async (dispatch:any)=>{
      let data  =  await todoAPI.editTodoList(title, descriptin,id);
         dispatch(edditTasklistAC(data.data));
     }
 };
 
-export const putTitleTasklist = (title) =>{
-    return async (dispatch)=>{
+export const putTitleTasklist = (title:string) =>{
+    return async (dispatch:any)=>{
 
         dispatch(putTasklistTitleAC(title));
     }

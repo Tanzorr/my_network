@@ -17,6 +17,7 @@ import Redirect from "react-router-dom/es/Redirect";
 import TodoListContatiner from "./componets/Todolist/TodoListsContatiner";
 import AddTodoListW from "./componets/Todolist/AddTodoList";
 import EdditTodolistContainer from "./componets/Todolist/EditTodolistContainer";
+import TodoListSingle from "./componets/Todolist/TodoListItem/TodoListSingle";
 
 const DialogsContainer = React.lazy(()=>import("./componets/Dialogs/DialogsContainer"));
 const ProfileContainer = React.lazy(()=>import("./componets/Profile/ProfileContainer"));
@@ -54,6 +55,7 @@ class App extends Component{
                         <Route path='/login' component={LoginPage}/>
                         <Route path='/todolistsadd' component={AddTodoListW}/>
                         <Route path='/editTodoList/:todolistId' component={EdditTodolistContainer}/>
+                        <Route path='/TodoList/:todolistId' component={TodoListSingle}/>
 
                     </div>
 

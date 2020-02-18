@@ -1,19 +1,29 @@
-import {usersAPI,dialogAPI} from "../api/api";
+import {usersAPI} from "../api/api";
 import {getUsers, setTotalUsersCount, setUsers, toggleIsFetching} from "./users-reducer";
 
 const ADD_MESSAGE = 'ADD-MESSAGE';
 const SET_USERS_DIALOGS = 'SET_USERS_DIALOGS';
 
+type DialgType= {
+    id:number
+    name:string
+}
+type MessageType= {
+    id:number
+    message:string
+}
 
 let initialState = {
-    messages:[],
+    messages:[]as Array<MessageType>,
     dialogs:[
         {id: 1, name: 'Dimych'},
         {id: 2, name: 'Alex'},
-    ],
+    ]as Array<DialgType>,
 };
 
-const dialogsReducer =(state=initialState, action)=> {
+export type inittialStateType = typeof initialState
+
+const dialogsReducer =(state=initialState, action:any)=> {
 
     switch (action.type) {
         case ADD_MESSAGE:
@@ -41,8 +51,8 @@ const dialogsReducer =(state=initialState, action)=> {
 };
 
 
-export const getUserss =(page,pageSize)=> {
-    return async (dispatch)=> {
+export const getUserss =(page:number,pageSize:number)=> {
+    return async (dispatch:any)=> {
         dispatch(toggleIsFetching(true));
         let data = await usersAPI.getUsers(page, pageSize);
         dispatch(toggleIsFetching(false));
@@ -53,7 +63,14 @@ export const getUserss =(page,pageSize)=> {
 };
 
 
-export const addMessageActionCreator = (newMessageBody)=>{
+type AddMessageGeneratorActionType ={
+    type: typeof ADD_MESSAGE,
+    newMessageBody:string
+
+    
+}
+
+export const addMessageActionCreator = (newMessageBody:string):AddMessageGeneratorActionType=>{
     return{
         type:ADD_MESSAGE,
         newMessageBody
@@ -62,7 +79,7 @@ export const addMessageActionCreator = (newMessageBody)=>{
 
 
 
-export const  setDialogUsersActionCreator =(users)=>{
+export const  setDialogUsersActionCreator =(users:any)=>{
     return{
         type:SET_USERS_DIALOGS,
         users
