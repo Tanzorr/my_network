@@ -94,6 +94,7 @@ export  const todoAPI = {
         return instance.get(`${baseURL}/todo-lists`).then((response)=>{return response});
     },
 
+
     getTodoList(id){
         return instance.get(`${baseURL}/todo-lists/${id}/tasks`).then((response)=>{return response});
     },
@@ -120,10 +121,10 @@ export  const todoAPI = {
 };
 
 
-todoAPI.addTask("task","description",true,3,2,Date.now(), Date.now(),"e1d6b5ff-4389-4d9e-89c3-95f0befc96b7",3, Date.now());
-
-let taskList = todoAPI.getTodoList("e1d6b5ff-4389-4d9e-89c3-95f0befc96b7");
-
-console.log("TaskList",taskList);
+// todoAPI.addTask("task","description",true,3,2,Date.now(), Date.now(),"e1d6b5ff-4389-4d9e-89c3-95f0befc96b7",3, Date.now());
+//
+// let taskList = todoAPI.getTodoList("e1d6b5ff-4389-4d9e-89c3-95f0befc96b7");
+//
+// console.log("TaskList",taskList);
 
 

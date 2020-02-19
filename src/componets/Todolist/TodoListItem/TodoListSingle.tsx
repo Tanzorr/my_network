@@ -1,16 +1,36 @@
-import React, {Component} from 'react';
+import React, {useState,useEffect} from 'react';
+import {connect} from "react-redux";
+import {getTasksListTile,getTaskList,getTasksLists} from "../../../redux/todolist-reducer"
+
 
 const TodoListSingle = (props:any)=> {
-
     let id = props.match.params.todolistId;
-    console.log("todoId",id);
+    useEffect(()=>{
+        props.getTaskList(id)
+        props.getTasksListTile(id)
+    },[])
+
+
+
+
+
+
+
+
 
         return (
             <div>
-                <h1> Todo lisst title</h1>
+                <h1> {props.todoList.toDoListTile}</h1>
             </div>
         );
 
 }
+let mapStateToProps = (state:any)=>{
 
-export default TodoListSingle;
+    return{
+        todoList: state.todoList
+    }
+};
+
+
+export default connect(mapStateToProps,{getTaskList,getTasksListTile,getTasksLists})(TodoListSingle);

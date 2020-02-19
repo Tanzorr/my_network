@@ -3,12 +3,14 @@ import {todoAPI} from "../api/api";
 
 
 const GET_TASKS = 'GET_TASKS';
-const SET_TASKSLIST='SET_TASKSLIST';
+const SET_TASKSLISTS='SET_TASKSLISTS';
 const REMOVE_TASKS_LIST = 'REMOVE_TASKS_LIST';
 const ADD_TASKS_LIST ='ADD_TASKS_LIST';
 const EDIT_TASK ='EDIT_TASK';
 const GET_TASKSLIST_TITLE ='GET_TASKSLIST_TITLE';
 const PUT_TASK_LIST_TITLE = 'PUT_TASK_LIST_TITLE';
+const SET_TASKSLIST= 'SET_TASKSLIST';
+
 
 type TaskType={
     id:number
@@ -57,7 +59,7 @@ type InitialStateTodoListType = typeof initialState
 const  todoListReducer =(state=initialState , action:any):InitialStateTodoListType  =>{
 
     switch (action.type) {
-        case SET_TASKSLIST:
+        case SET_TASKSLISTS:
             return {
                ...state, todolists: action.tasks
             };
@@ -87,14 +89,11 @@ const  todoListReducer =(state=initialState , action:any):InitialStateTodoListTy
             };
 
         case GET_TASKSLIST_TITLE:
-           // console.log('sssssss', state);
+
             return {
                 ...state,
-                toDoListTile: state.todolists.filter((item:any)=>{
-                    return item.id  === action.id
-                })
-
-            };
+                toDoListTile: action.title
+                };
         case PUT_TASK_LIST_TITLE:
 
             return {
@@ -109,11 +108,23 @@ const  todoListReducer =(state=initialState , action:any):InitialStateTodoListTy
 
 
 type SetTasksListsACType ={
-    type:typeof SET_TASKSLIST
+    type:typeof SET_TASKSLISTS
     tasks:Array<TodoListType>
 }
 
 const setTasksListsAC = (tasks:Array<TodoListType>):SetTasksListsACType=>{
+    return{
+        type:SET_TASKSLISTS,
+        tasks
+    }
+};
+
+type SetTasksListACType ={
+    type:typeof SET_TASKSLIST
+    tasks:Array<TaskType>
+}
+
+const setTasksListAC = (tasks:Array<TaskType>):SetTasksListACType=>{
     return{
         type:SET_TASKSLIST,
         tasks
@@ -122,13 +133,13 @@ const setTasksListsAC = (tasks:Array<TodoListType>):SetTasksListsACType=>{
 
 type SetTasksListsTitleACType ={
     type:typeof GET_TASKSLIST_TITLE
-    id:number
+    title:string
 }
 
-const getTasksListTitleAC = (id:number):SetTasksListsTitleACType=>{
+const getTasksListTitleAC = (title:string):SetTasksListsTitleACType=>{
     return{
         type:GET_TASKSLIST_TITLE,
-        id
+        title
     }
 };
 
@@ -191,11 +202,25 @@ export const getTasksLists = ()=>{
     }
 };
 
-export const getTasksListTile = (id:number)=>{
+export const getTaskList =(id:string)=>{
+    return async (dispatch:any)=>{
+        let  data  = await  todoAPI.getTodoList(id);
+        console.log("dataTList", data);
+        return dispatch(setTasksListAC(data.data));
+    }
+}
+
+export const getTasksListTile = (id:string)=>{
     console.log('getTasksListTile', id);
     return async (dispatch:any)=>{
-        // dispatch(toggleIsFetching(true));
-        return dispatch(getTasksListTitleAC(id));
+        let data =  await  todoAPI.getTodoLists();
+        let todoLists = data.data
+        let todoItem  = todoLists.find((item:any)=>{
+            return item.id===id;
+        });
+
+
+        return dispatch(getTasksListTitleAC(todoItem.title));
         // dispatch(toggleIsFetching(false));
     }
 };
@@ -212,9 +237,9 @@ export const removeTasksList = (id:number)=>{
 };
 
 
-export const addTasksList = (title:string, descriptin:string)=>{
+export const addTasksList = (title:string)=>{
     return async (dispatch:any)=>{
-        await todoAPI.addTodoList(title, descriptin);
+        await todoAPI.addTodoList(title);
         dispatch(addTasksListAC(title));
     }
 };
