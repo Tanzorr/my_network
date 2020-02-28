@@ -10,6 +10,7 @@ const EDIT_TASK ='EDIT_TASK';
 const GET_TASKSLIST_TITLE ='GET_TASKSLIST_TITLE';
 const PUT_TASK_LIST_TITLE = 'PUT_TASK_LIST_TITLE';
 const SET_TASKSLIST= 'SET_TASKSLIST';
+const ADD_TASK= 'ADD_TASK';
 
 
 type TaskType={
@@ -167,6 +168,21 @@ const addTasksListAC = (title:string):AddTasksListCType=>{
     }
 };
 
+type AddTaskType ={
+    type:typeof ADD_TASK
+    title:string
+    description:string
+}
+
+const addTaskAC = (title:string, description:string):AddTaskType=>{
+    return{
+        type:ADD_TASK,
+        title,
+        description
+    }
+};
+
+
 type EditTasksListsACType ={
     type:typeof EDIT_TASK
     data:any
@@ -210,6 +226,13 @@ export const getTaskList =(id:string)=>{
     }
 }
 
+export const getTasks=(id:string)=>{
+    return async (dispatch:any)=>{
+        let  data = await  todoAPI.getTsakList(id);
+        return dispatch()
+    }
+}
+
 export const getTasksListTile = (id:string)=>{
     console.log('getTasksListTile', id);
     return async (dispatch:any)=>{
@@ -243,6 +266,14 @@ export const addTasksList = (title:string)=>{
         dispatch(addTasksListAC(title));
     }
 };
+
+export const addTaskProp = (title:string, description:string, taskList:string)=>{
+    return async (dispatch:any)=>{
+        await todoAPI.addTask(title,description,taskList);
+    }
+};
+
+
 
 
 export const editTasksList = (title:string, descriptin:string,id:number)=>{

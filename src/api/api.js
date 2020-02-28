@@ -113,9 +113,14 @@ export  const todoAPI = {
     },
 
     ///todo-lists/{todolistId}/tasks
-    addTask(title, description, completed, status,priority,startDate,deadline,todoListId,order,addedDate){
+    addTask(title, description,todoListId, completed=true, status=1,priority=2,startDate=Date.now(),deadline=Date.now(),order=3,addedDate=Date.now()){
         return instance.post(`${baseURL}/todo-lists/${todoListId}/tasks`,{title, description,completed,status,priority,startDate,deadline,order,addedDate})
-    }
+    },
+
+    getTsakList(todolistId){
+        return instance.get(`${baseURL}/todo-lists/${todolistId}/tasks`).then((response)=>{return response});
+    },
+
 
 
 };

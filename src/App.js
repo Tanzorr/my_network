@@ -50,7 +50,7 @@ class App extends Component{
                         <Route exact path='/'render={()=><Redirect to={"/profile"}/>}/>
                         <Route path='/dialogs' render={withSuspense(DialogsContainer)}/>
                         <Route path='/profile/:userId?'render={withSuspense(ProfileContainer)}/>
-                        <Route path='/users' component={UsersContainer}/>
+                        <Route path='/users' component={UsersContainer }/>
                         <Route path='/todolists' component={TodoListContatiner}/>
                         <Route path='/login' component={LoginPage}/>
                         <Route path='/todolistsadd' component={AddTodoListW}/>

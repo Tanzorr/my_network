@@ -10,3 +10,5 @@ const profileReducer =(state=internalState, action:any):InitialStateType=>{
 
     return state;
 }
+
+export default profileReducer;
