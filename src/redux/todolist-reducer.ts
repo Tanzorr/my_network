@@ -249,7 +249,7 @@ export const getTasksListTile = (id:string)=>{
 };
 
 
-export const removeTasksList = (id:number)=>{
+export const removeTasksList = (id:any)=>{
     return async (dispatch:any)=>{
 
          await todoAPI.removeTodoList(id);
@@ -276,7 +276,7 @@ export const addTaskProp = (title:string, description:string, taskList:string)=>
 
 
 
-export const editTasksList = (title:string, descriptin:string,id:number)=>{
+export const editTasksList = (title:string, descriptin:string,id:string)=>{
     return async (dispatch:any)=>{
      let data  =  await todoAPI.editTodoList(title, descriptin,id);
         dispatch(edditTasklistAC(data.data));

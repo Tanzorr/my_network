@@ -1,5 +1,4 @@
 import {authAPI, securityhAPI} from "../api/api";
-import {stopSubmit} from "redux-form";
 
 const SET_USERS_DATA = 'my-netvorck/auth/SET-USERS-DATA';
 const GET_CAPTCHA_URL_SUCCESS = 'my-netvorck/auth/GET_CAPTCHA_URL_SUCCESS';
@@ -53,6 +52,9 @@ export const setAuthUserData = (userId:number|null,email:string |null, login:str
         {userId,email,login,isAuth}
 });
 
+
+
+
 type GetCaptCapthaUrlSuccessActionType = {
     type: typeof GET_CAPTCHA_URL_SUCCESS
     payload:{captchaUrl:string}
@@ -63,30 +65,34 @@ export const getCapthaUrlSuccess = (captchaUrl:string): GetCaptCapthaUrlSuccessA
     payload:{captchaUrl}
 });
 
-
+enum ResultCodesEnum{
+    Success =0,
+    Error =1,
+    CaptchaIsRequired = 10
+}
 
 export const getAuthUserData =() => async(dispatch:any)=>{
-    let response = await authAPI.me();
+    let meData = await authAPI.me();
 
-        if(response.data.resultCode === 0){
-            let {id,email,login} = response.data.data;
+        if(meData.resultCode === ResultCodesEnum.Success){
+            let {id,email,login} = meData.data;
             dispatch (setAuthUserData(id, email, login, true));
         }
 
 };
 
 
-export const login =(email:string,password:string,rememberMe:boolean,captcha:string) =>async (dispatch:any)=>{
-   let response = await authAPI.login(email,password,rememberMe, captcha);
-        console.log("responce data",response.data.messages);
-        if(response.data.resultCode === 0){
+export const login =(email:string,password:string,rememberMe:boolean,captcha:any) =>async (dispatch:any)=>{
+   let data = await authAPI.login(email,password,rememberMe, captcha);
+
+        if(data.resultCode === ResultCodesEnum.Success){
          dispatch(getAuthUserData())
         }else{
-            if (response.data.resultCode === 1) {
+            if (data.resultCode === ResultCodesEnum.CaptchaIsRequired) {
                 dispatch(getCaptchaUrl());
             }
 
-                let message = response.data.messages.length > 0 ? response.data.messages[0] : "Some error";
+                //let message = data.messages.length > 0 ? data.messages[0] : "Some error";
                // dispatch(stopSubmit("login",{_error: message}));
             }
 

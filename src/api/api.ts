@@ -1,4 +1,6 @@
-import * as axios from "axios";
+import  axios from "axios";
+import {any} from "prop-types";
+import {ProfileType} from "../componets/types/types";
 
 
 let baseURL ='https://social-network.samuraijs.com/api/1.0/';
@@ -19,15 +21,15 @@ export const usersAPI ={
             })
     },
 
-    getProfile(userId){
+    getProfile(userId:number){
         return profileAPI.getProfile(userId);
     },
 
-    follow(userId){
+    follow(userId:number){
        return  instance.post(`${baseURL}/1.0/follow/${userId}`)
     },
 
-    unfollow(userId){
+    unfollow(userId:number){
        return  instance.delete(`${baseURL}follow/${userId}`)
 
     },
@@ -36,18 +38,18 @@ export const usersAPI ={
 
 export const profileAPI ={
 
-    getProfile(userId){
+    getProfile(userId:number){
         return instance.get(`${baseURL}profile/${userId}`).then(responce=>{return   responce.data});
     },
 
-    getStatus(userId){
+    getStatus(userId:number){
         return instance.get(`${baseURL}profile/status/${userId}`).then(responce=>{return   responce.data});
     },
 
-    updateStatus(status){
+    updateStatus(status:number){
         return instance.put(`${baseURL}profile/status`,{status});
     },
-    savePhoto(photoFile){
+    savePhoto(photoFile:ProfileType |any){
         const formData = new FormData();
         formData.append("image",photoFile);
         return instance.put(`${baseURL}profile/photo`,formData, {
@@ -57,23 +59,51 @@ export const profileAPI ={
         });
     },
 
-    saveProfile(profile){
-        console.log("profile2",profile);
+    saveProfile(profile:ProfileType){
+
        let response = instance.put(`${baseURL}profile`,profile);
-       console.log("response",response.data);
+
 
         return response;
     }
 };
 
+export enum ResultCodesEnum{
+    Success =0,
+    Error =1,
+    CaptchaIsRequired = 10
+}
+
+export enum ResultCodesForCaptha{
+    CaptcfahIsREquired =10
+}
+
+
+type MeResponseType = {
+    data:{
+        id:number
+        email:string
+        login:string
+    }
+    resultCode:ResultCodesEnum |ResultCodesForCaptha
+    message:Array<string>
+}
+
+type LoginMeResponceType ={
+    data:{
+        userId:number
+    }
+    resultCode:ResultCodesEnum
+}
 export const authAPI = {
         me(){
-            return instance.get(`${baseURL}auth/me`)
+            return instance.get<MeResponseType>(`${baseURL}auth/me`).then(res =>res.data);
         },
 
-        login(email,password, rememberMe=false, captcha=null){
+        login(email:string,password:string, rememberMe=false, captcha=null){
 
-            return instance.post(`${baseURL}auth/login`,{email,password,rememberMe});
+            return instance.post<LoginMeResponceType>(`${baseURL}auth/login`,{email,password,rememberMe})
+                .then(res =>res.data);
         },
 
         logout(){
@@ -95,29 +125,29 @@ export  const todoAPI = {
     },
 
 
-    getTodoList(id){
+    getTodoList(id:string){
         return instance.get(`${baseURL}/todo-lists/${id}/tasks`).then((response)=>{return response});
     },
 
-    removeTodoList(id){
+    removeTodoList(id:string){
 
         return instance.delete(`${baseURL}/todo-lists/${id}`).then((response)=>{return response});
     },
 
-    addTodoList(title, description){
-        return instance.post(`${baseURL}/todo-lists`,{title, description})
+    addTodoList(title:string){
+        return instance.post(`${baseURL}/todo-lists`,{title})
     },
 
-    editTodoList(title, description,id){
-        return instance.put(`${baseURL}/todo-lists${id}`,{title, description})
+    editTodoList(title:string, description:string,id:string){
+        return instance.put(`${baseURL}/todo-lists${id}`,{title})
     },
 
     ///todo-lists/{todolistId}/tasks
-    addTask(title, description,todoListId, completed=true, status=1,priority=2,startDate=Date.now(),deadline=Date.now(),order=3,addedDate=Date.now()){
+    addTask(title:string, description:string,todoListId:string, completed=true, status=1,priority=2,startDate=Date.now(),deadline=Date.now(),order=3,addedDate=Date.now()){
         return instance.post(`${baseURL}/todo-lists/${todoListId}/tasks`,{title, description,completed,status,priority,startDate,deadline,order,addedDate})
     },
 
-    getTsakList(todolistId){
+    getTsakList(todolistId:string){
         return instance.get(`${baseURL}/todo-lists/${todolistId}/tasks`).then((response)=>{return response});
     },
 
