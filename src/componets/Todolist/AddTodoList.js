@@ -34,12 +34,9 @@ const AddTodoList = (props)=>{
                 <label>Title: </label>
                 <input onChange={onTitleChange} autoFocus={true} type="text" value={Title}/>
             </div>
-           <div>
-               <label>Description: </label>
-               <textarea onChange={onDecscriptionChange}  >{Description}</textarea>
-           </div>
 
-            <input type="button"  onClick={()=>{props.addTasksList(Title, Description); redirect(); }  }value="add"/>
+
+            <input type="button"  onClick={()=>{props.addTasksList(Title); redirect(); }  }value="add"/>
         </>
     )
 }

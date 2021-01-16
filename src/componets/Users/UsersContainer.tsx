@@ -19,13 +19,38 @@ import {
     getPageSize,
     getTotalUsersCount, getUserss
 } from "../../redux/users-selectors";
+import {UserType} from "../types/types";
+import {AppSateType} from "../../redux/redux-store";
 
-class UsersAPIComponent extends Component {
+
+
+type MapSatatePropsType={
+    currentPage:number
+    onpageChanged:(pageNumber:number)=>void
+    pageSize:number
+    isFetching:boolean
+    totalUsersCount:number
+    users:Array<UserType>
+
+}
+type MapDispatchPropsType={
+    getUsers:(currentPage:number,pageSize:number)=>void
+
+    followingProgress:Array<number>
+
+    unfollow:(userId:number)=>void
+    follow:(userId:number)=>void
+
+}
+type PropsType= MapDispatchPropsType & MapSatatePropsType
+
+class UsersAPIComponent extends Component<PropsType> {
+
     componentDidMount() {
         let {currentPage,pageSize} = this.props;
         this.props.getUsers(currentPage, pageSize);}
 
-        onpageChanged =(pageNumber)=>{
+        onpageChanged =(pageNumber:number)=>{
         let pageSize = this.props.pageSize;
         this.props.getUsers(pageNumber,pageSize);
     };
@@ -36,15 +61,16 @@ class UsersAPIComponent extends Component {
                 <div>
                     {this.props.isFetching ? <Preloader/> :null}
                 </div>
-                <Users totalUsersCount = {this.props.totalUsersCount}
+                <Users
+                    totalUsersCount = {this.props.totalUsersCount}
                    pageSize = {this.props.pageSize}
                    currentPage  = {this.props.currentPage}
                    onpageChanged ={this.onpageChanged}
                    users = {this.props.users}
-                   follow = {this.props.followSuccess}
-                   unfollow = {this.props.unfollowSuccess}
-                   toggleFollowingProgress={this.props.toggleFollowingProgress}
-                       followingInProgress={this.props.followingInProgress}
+                   follow = {this.props.follow}
+                   unfollow = {this.props.unfollow}
+                   //toggleFollowingProgress={this.props.toggleFollowingProgress}
+                       followingInProgress={this.props.followingProgress}
 
             />
             </div>
@@ -53,7 +79,7 @@ class UsersAPIComponent extends Component {
 }
 
 
-let mapStateToProps = (state)=>{
+let mapStateToProps = (state:AppSateType)=>{
 
     return{
         users: getUserss(state),
@@ -61,7 +87,8 @@ let mapStateToProps = (state)=>{
         totalUsersCount: getTotalUsersCount(state),
         currentPage: getCurrentPage(state),
         isFetching: getIsFetching(state),
-        followingInProgress:getFollovingInProgress(state)
+        followingInProgress:getFollovingInProgress(state),
+
     }
 };
 
